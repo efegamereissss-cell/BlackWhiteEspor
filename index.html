@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black White Esports (BWE) | Valorant Pro Kadro Alımı</title>
-    <meta name="description" content="Black White Esports (BWE) Valorant takımı tüm rollerde (Öncü, Düellocu, Kontrol, Gözcü, Flex) profesyonel oyuncu seçmeleri!">
+    <title>Black White Esports (BWE) | Valorant Pro Kadro Alımı & Tryouts</title>
+    <meta name="description" content="Black White Esports (BWE) Valorant takımı resmi oyuncu seçmeleri. Tüm rollerde profesyonel kadro alımı aktif!">
     
-    <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Teko:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Teko:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS (Play CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,10 +20,11 @@
                 extend: {
                     colors: {
                         valRed: '#FF4655',
-                        valRedHover: '#ff2b3d',
-                        valDark: '#08090C',
-                        valCard: '#111218',
-                        valBorder: '#232530',
+                        valRedDark: '#BD1F2D',
+                        valNeon: '#FF2A3D',
+                        valDark: '#08080C',
+                        valCard: '#11131B',
+                        valBorder: '#232738',
                     },
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -31,9 +32,9 @@
                         teko: ['"Teko"', 'sans-serif'],
                     },
                     boxShadow: {
-                        'neon-red': '0 0 35px -5px rgba(255, 70, 85, 0.45)',
-                        'neon-white': '0 0 30px -5px rgba(255, 255, 255, 0.25)',
-                        'apple-glass': '0 20px 50px rgba(0, 0, 0, 0.7)',
+                        'neon-red': '0 0 45px -5px rgba(255, 70, 85, 0.6)',
+                        'neon-glow': '0 0 60px -10px rgba(255, 70, 85, 0.4)',
+                        'apple-glass': '0 30px 60px -12px rgba(0, 0, 0, 0.85)',
                     }
                 }
             }
@@ -59,66 +60,66 @@
             color: #ffffff;
         }
 
-        /* FIX CRITICAL NATIVE DROPDOWN CONTRAST ISSUE */
+        /* Tactical Cyber Grid Overlay */
+        .tactical-grid {
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* Fix OS native select contrast */
         select, option {
             background-color: #12131a !important;
             color: #ffffff !important;
             font-weight: 600 !important;
         }
-        select option:hover, select option:checked {
-            background-color: #FF4655 !important;
-            color: #ffffff !important;
-        }
 
-        /* Apple Glass Panels */
+        /* Apple Glass Styling */
         .glass-panel {
-            background: rgba(17, 18, 25, 0.85);
-            backdrop-filter: blur(28px);
-            -webkit-backdrop-filter: blur(28px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(14, 15, 23, 0.88);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .glass-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(20, 21, 30, 0.9) 100%);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(18, 19, 28, 0.95) 100%);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .glass-card:hover {
-            border-color: rgba(255, 70, 85, 0.6);
-            transform: translateY(-6px);
-            box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 70, 85, 0.2);
+            border-color: rgba(255, 70, 85, 0.7);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 70, 85, 0.35);
         }
 
-        /* High-contrast Apple Input Fields */
+        /* High Contrast Inputs */
         .lux-input {
             background: #0f1017 !important;
-            border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.16) !important;
             color: #ffffff !important;
             font-size: 0.95rem;
             font-weight: 500;
             transition: all 0.25s ease;
         }
 
-        .lux-input::placeholder {
-            color: #717588 !important;
-            font-weight: 400;
-        }
-
         .lux-input:focus {
-            background: #141622 !important;
+            background: #141624 !important;
             border-color: #FF4655 !important;
-            box-shadow: 0 0 0 4px rgba(255, 70, 85, 0.3) !important;
+            box-shadow: 0 0 0 4px rgba(255, 70, 85, 0.35) !important;
             outline: none;
         }
 
         /* Role Selector Radio Cards */
         .role-radio:checked + label {
-            background: linear-gradient(135deg, rgba(255, 70, 85, 0.25) 0%, rgba(255, 70, 85, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(255, 70, 85, 0.35) 0%, rgba(255, 70, 85, 0.1) 100%);
             border-color: #FF4655;
-            box-shadow: 0 0 25px rgba(255, 70, 85, 0.45);
+            box-shadow: 0 0 30px rgba(255, 70, 85, 0.55);
+            transform: translateY(-4px);
         }
         .role-radio:checked + label .check-icon {
             opacity: 1;
@@ -130,11 +131,11 @@
             background: #FF4655;
             border-color: #FF4655;
             color: #ffffff;
-            box-shadow: 0 0 20px rgba(255, 70, 85, 0.6);
+            box-shadow: 0 0 25px rgba(255, 70, 85, 0.7);
             transform: translateY(-2px);
         }
 
-        /* Ticker Marquee Animation */
+        /* Infinite Ticker Marquee */
         @keyframes marquee {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
@@ -142,181 +143,235 @@
         .animate-marquee {
             display: flex;
             width: 200%;
-            animation: marquee 22s linear infinite;
+            animation: marquee 24s linear infinite;
         }
         .animate-marquee:hover {
             animation-play-state: paused;
         }
 
-        /* Ambient Glow Animations */
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 0.4; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.08); }
+        /* Floating Hero Animation */
+        @keyframes floatAgent {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1.2deg); }
         }
-        .animate-pulse-glow {
-            animation: pulseGlow 6s ease-in-out infinite;
+        .animate-float-agent {
+            animation: floatAgent 6s ease-in-out infinite;
         }
 
-        /* Floating Agent Art */
-        @keyframes heroFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(1deg); }
-        }
-        .animate-hero-float {
-            animation: heroFloat 7s ease-in-out infinite;
+        /* Scanline Overlay Effect */
+        .scanlines {
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0, 0, 0, 0.3) 50%,
+                rgba(0, 0, 0, 0.3)
+            );
+            background-size: 100% 4px;
         }
     </style>
 </head>
-<body class="relative">
+<body class="relative tactical-grid">
 
-    <!-- Ambient Glowing Blurs -->
-    <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-red-600/20 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-glow"></div>
-    <div class="fixed bottom-1/4 right-0 w-[550px] h-[550px] bg-white/10 rounded-full blur-[150px] pointer-events-none -z-10 animate-pulse-glow" style="animation-delay: 3s;"></div>
+    <!-- ================= CINEMATIC BACKGROUND WITH ESPORTS ARENA & MAP SPLASH ================= -->
+    <div class="fixed inset-0 pointer-events-none -z-20 overflow-hidden">
+        <!-- VCT Esports Arena Crowd & Stage Photo -->
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop" 
+             alt="VCT Esports Stage" 
+             class="w-full h-full object-cover filter brightness-[0.22] contrast-125 saturate-150 scale-105">
+        
+        <!-- Gradient Dark Fog Vignette -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#07080b]/80 via-[#07080b]/90 to-[#07080b]"></div>
+        
+        <!-- Scanlines layer -->
+        <div class="absolute inset-0 scanlines opacity-40"></div>
+    </div>
 
-    <!-- ================= 1. URGENT RECRUITMENT TICKER (DUYURU) ================= -->
-    <div class="sticky top-0 z-50 bg-gradient-to-r from-valRed via-[#c81928] to-valRed text-white text-xs md:text-sm font-extrabold uppercase tracking-wider py-2 overflow-hidden shadow-lg border-b border-white/20">
+    <!-- Glowing Ambient Neon Orbs -->
+    <div class="fixed top-20 left-1/4 w-[700px] h-[700px] bg-red-600/20 rounded-full blur-[160px] pointer-events-none -z-10 animate-pulse" style="animation-duration: 8s;"></div>
+    <div class="fixed bottom-20 right-10 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[170px] pointer-events-none -z-10 animate-pulse" style="animation-duration: 10s;"></div>
+
+    <!-- ================= 1. RECRUITMENT TICKER (DUYURU) ================= -->
+    <div class="sticky top-0 z-50 bg-gradient-to-r from-valRed via-[#c81928] to-valRed text-white text-xs md:text-sm font-extrabold uppercase tracking-wider py-2.5 overflow-hidden shadow-2xl border-b border-white/20">
         <div class="animate-marquee whitespace-nowrap items-center flex gap-12 font-display">
-            <span class="flex items-center gap-2">🔥 <strong>RESMİ DUYURU:</strong> BLACK WHITE ESPORTS (BWE) <strong>TÜM ROLLERDE</strong> (DÜELLOCU, ÖNCÜ, KONTROL, GÖZCÜ, FLEX, IGL) AKTİF KADRO ALIMI YAPIYOR!</span>
-            <span class="flex items-center gap-2">⚡ <strong>HEDEF:</strong> VCT CHALLENGERS & ASCENSION ELEMELERİ</span>
-            <span class="flex items-center gap-2">🎯 <strong>MİNİMUM KRİTER:</strong> IMMORTAL / RADIANT TECRÜBESİ</span>
-            <span class="flex items-center gap-2">🛡️ <strong>BWE:</strong> SIFIR BAHANE, PROFESYONEL KOÇLUK & VOD ANALİZİ</span>
-            <!-- Duplicate for infinite seamless loop -->
-            <span class="flex items-center gap-2">🔥 <strong>RESMİ DUYURU:</strong> BLACK WHITE ESPORTS (BWE) <strong>TÜM ROLLERDE</strong> (DÜELLOCU, ÖNCÜ, KONTROL, GÖZCÜ, FLEX, IGL) AKTİF KADRO ALIMI YAPIYOR!</span>
-            <span class="flex items-center gap-2">⚡ <strong>HEDEF:</strong> VCT CHALLENGERS & ASCENSION ELEMELERİ</span>
-            <span class="flex items-center gap-2">🎯 <strong>MİNİMUM KRİTER:</strong> IMMORTAL / RADIANT TECRÜBESİ</span>
-            <span class="flex items-center gap-2">🛡️ <strong>BWE:</strong> SIFIR BAHANE, PROFESYONEL KOÇLUK & VOD ANALİZİ</span>
+            <span class="flex items-center gap-2">🔥 <strong>RESMİ DUYURU:</strong> BLACK WHITE ESPORTS (BWE) <strong>TÜM ROLLERDE</strong> (DÜELLOCU, ÖNCÜ, KONTROL, GÖZCÜ, FLEX, IGL) AKTİF KADRO SEÇİMLERİ BAŞLADI!</span>
+            <span class="flex items-center gap-2">🏆 <strong>HEDEF:</strong> VCT CHALLENGERS & ASCENSION ELEMELERİ</span>
+            <span class="flex items-center gap-2">🎯 <strong>MİNİMUM:</strong> IMMORTAL / RADIANT TECRÜBESİ</span>
+            <span class="flex items-center gap-2">⚡ <strong>TAKIM:</strong> HAFTALIK 6 GÜN SCRIM & VOD KOÇLUĞU</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="flex items-center gap-2">🔥 <strong>RESMİ DUYURU:</strong> BLACK WHITE ESPORTS (BWE) <strong>TÜM ROLLERDE</strong> (DÜELLOCU, ÖNCÜ, KONTROL, GÖZCÜ, FLEX, IGL) AKTİF KADRO SEÇİMLERİ BAŞLADI!</span>
+            <span class="flex items-center gap-2">🏆 <strong>HEDEF:</strong> VCT CHALLENGERS & ASCENSION ELEMELERİ</span>
+            <span class="flex items-center gap-2">🎯 <strong>MİNİMUM:</strong> IMMORTAL / RADIANT TECRÜBESİ</span>
+            <span class="flex items-center gap-2">⚡ <strong>TAKIM:</strong> HAFTALIK 6 GÜN SCRIM & VOD KOÇLUĞU</span>
         </div>
     </div>
 
     <!-- ================= 2. APPLE-STYLE FLOATING NAVBAR ================= -->
-    <div class="px-4 pt-4 max-w-6xl mx-auto">
-        <nav class="glass-panel rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-apple-glass border border-white/15">
+    <div class="px-4 pt-4 max-w-7xl mx-auto">
+        <nav class="glass-panel rounded-2xl px-6 py-4 flex items-center justify-between shadow-apple-glass border border-white/15">
             <!-- Brand & Custom SVG Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-white via-zinc-200 to-zinc-700 p-0.5 shadow-neon-white group-hover:scale-105 transition-all duration-300">
-                    <div class="w-full h-full bg-[#0a0b10] rounded-[10px] flex items-center justify-center relative overflow-hidden">
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-white via-zinc-200 to-zinc-800 p-0.5 shadow-neon-glow group-hover:scale-105 transition-all duration-300">
+                    <div class="w-full h-full bg-[#090a10] rounded-[14px] flex items-center justify-center relative overflow-hidden">
                         <!-- Custom Geometric BWE Monogram -->
                         <svg viewBox="0 0 100 100" class="w-8 h-8 fill-none">
-                            <polygon points="50,10 88,32 88,68 50,90 12,68 12,32" stroke="white" stroke-width="6" stroke-linejoin="round" class="opacity-90"/>
-                            <!-- BWE stylized mark -->
-                            <path d="M30 35 H55 C65 35 65 50 55 50 H30 M30 50 H58 C70 50 70 65 58 65 H30" stroke="#FF4655" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polygon points="50,8 90,30 90,70 50,92 10,70 10,30" stroke="white" stroke-width="6" stroke-linejoin="round" class="opacity-90"/>
+                            <path d="M28 35 H56 C66 35 66 50 56 50 H28 M28 50 H60 C72 50 72 65 60 65 H28" stroke="#FF4655" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="50" cy="50" r="3" fill="white" class="animate-ping"/>
                         </svg>
                     </div>
                 </div>
                 <div>
                     <div class="font-display font-extrabold text-xl tracking-wider text-white flex items-center gap-2">
-                        BLACK WHITE <span class="text-xs bg-valRed px-2 py-0.5 rounded text-white font-sans font-bold">ESPORTS</span>
+                        BLACK WHITE <span class="text-xs bg-valRed px-2 py-0.5 rounded text-white font-sans font-black">ESPORTS</span>
                     </div>
-                    <span class="text-[11px] font-mono tracking-widest text-zinc-400 uppercase">TAG: BWE // VALORANT DIVISION</span>
+                    <span class="text-[11px] font-mono tracking-widest text-zinc-400 uppercase">OFFICIAL BWE ROSTER // 2026</span>
                 </div>
             </a>
 
             <!-- Navigation Links -->
-            <div class="hidden lg:flex items-center gap-8 text-sm font-bold text-zinc-300">
-                <a href="#urgent" class="hover:text-valRed transition-colors">Tüm Roller</a>
-                <a href="#agents" class="hover:text-valRed transition-colors">Ajan Kadrosu</a>
-                <a href="#stats" class="hover:text-valRed transition-colors">Takım Standartları</a>
-                <a href="#apply" class="hover:text-valRed transition-colors">Kadroya Başvur</a>
+            <div class="hidden lg:flex items-center gap-8 text-sm font-extrabold text-zinc-300">
+                <a href="#gallery" class="hover:text-valRed transition-colors flex items-center gap-1.5">
+                    <span>🎮</span> Arena & Galeri
+                </a>
+                <a href="#roles" class="hover:text-valRed transition-colors flex items-center gap-1.5">
+                    <span>⚔️</span> Açık Roller
+                </a>
+                <a href="#standards" class="hover:text-valRed transition-colors flex items-center gap-1.5">
+                    <span>🏆</span> Vizyon & Kriterler
+                </a>
+                <a href="#apply" class="hover:text-valRed transition-colors flex items-center gap-1.5">
+                    <span>📝</span> Başvuru Yap
+                </a>
             </div>
 
             <!-- CTA Button -->
-            <a href="#apply" class="px-6 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-black font-extrabold text-sm transition-all duration-300 transform hover:scale-105 shadow-neon-white flex items-center gap-2">
-                <span>Başvuru Yap</span>
-                <svg class="w-4 h-4 text-valRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            <a href="#apply" class="px-7 py-3 rounded-xl bg-valRed hover:bg-valRedDark text-white font-black text-sm transition-all duration-300 transform hover:scale-105 shadow-neon-red flex items-center gap-2">
+                <span>HEMEN BAŞVUR</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
         </nav>
     </div>
 
-    <!-- ================= 3. HERO SECTION WITH AGENT PHOTOS ================= -->
+    <!-- ================= 3. HERO SECTION WITH CINEMATIC THUMBNAIL & DYNAMIC AGENTS ================= -->
     <section class="relative pt-12 pb-24 px-4 overflow-hidden">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <!-- Left Column: Copy & Urgency -->
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
                 
-                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-valRed/15 border border-valRed/40 text-xs md:text-sm font-bold text-valRed shadow-neon-red">
-                    <span class="w-2.5 h-2.5 rounded-full bg-valRed animate-ping"></span>
-                    <span>TÜM ROLLERDE KADRO KURULUYOR • 2026 TRYOUTS</span>
+                <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-valRed/15 border border-valRed/50 text-xs md:text-sm font-extrabold text-valRed shadow-neon-red">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-valRed opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-valRed"></span>
+                    </span>
+                    <span>TÜM ROLLERDE AKTİF ALIM • VCT 2026 ELEMELERİ</span>
                 </div>
 
                 <h1 class="text-4xl sm:text-6xl xl:text-7xl font-extrabold font-display tracking-tight text-white leading-none">
-                    ZİRVEYE OYNA.<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-300 to-valRed">
-                        BWE KADROSUNA GİR.
+                    KUSURSUZ TAKTİK.<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-valRed">
+                        BWE ESPOR KADROSU.
                     </span>
                 </h1>
 
-                <p class="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-xl">
-                    <strong class="text-white font-bold">Black White Esports</strong>, Türkiye ve EMEA arenasında mücadele edecek Valorant 5'lisini tamamlıyor. 
-                    <span class="text-valRed font-semibold underline decoration-valRed/50">Düellocu, Öncü, Kontrol Uzmanı, Gözcü ve Flex</span> pozisyonlarının tümünde elit oyuncular arıyoruz.
+                <p class="text-base sm:text-lg text-zinc-300 font-medium leading-relaxed max-w-2xl">
+                    <strong class="text-white font-bold">Black White Esports</strong>, Türkiye ve EMEA Challengers sahnesinde mücadele edecek şampiyon kadroyu kuruyor. 
+                    Düellocu, Öncü, Kontrol Uzmanı, Gözcü ve Flex pozisyonlarının tümünde yüksek hedefleri olan oyuncularla tryout maçları başlıyor!
                 </p>
 
-                <!-- Quick Action Buttons -->
+                <!-- Actions -->
                 <div class="flex flex-col sm:flex-row items-center gap-4 pt-2 justify-center lg:justify-start">
-                    <a href="#apply" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-valRed hover:bg-valRedHover text-white font-extrabold text-base transition-all transform hover:scale-105 shadow-neon-red flex items-center justify-center gap-3">
-                        <span>BAŞVURU FORMUNA GİT</span>
+                    <a href="#apply" class="w-full sm:w-auto px-9 py-4 rounded-xl bg-valRed hover:bg-valRedDark text-white font-black text-base transition-all transform hover:scale-105 shadow-neon-red flex items-center justify-center gap-3">
+                        <span>KADRO BAŞVURUSUNA GEÇ</span>
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
                     </a>
-                    <a href="#urgent" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel hover:bg-white/10 text-white font-bold text-base transition-all border border-white/20 flex items-center justify-center gap-2">
-                        <span>Açık Pozisyonları Gör</span>
+                    <a href="#gallery" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel hover:bg-white/10 text-white font-bold text-base transition-all border border-white/20 flex items-center justify-center gap-2">
+                        <span>Haritalar & Arenamız</span>
                     </a>
                 </div>
 
-                <!-- Verified Stats Bar -->
-                <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
-                    <div>
+                <!-- Live Metrics Strip -->
+                <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-xl mx-auto lg:mx-0">
+                    <div class="glass-panel p-4 rounded-2xl border border-white/10">
                         <div class="text-2xl sm:text-3xl font-extrabold text-white font-display">5/5</div>
-                        <div class="text-xs text-zinc-400 font-medium uppercase mt-0.5">Tüm Roller Açık</div>
+                        <div class="text-xs text-zinc-400 font-bold uppercase mt-1">Tüm Roller Açık</div>
                     </div>
-                    <div>
+                    <div class="glass-panel p-4 rounded-2xl border border-white/10">
                         <div class="text-2xl sm:text-3xl font-extrabold text-valRed font-display">T1 / T2</div>
-                        <div class="text-xs text-zinc-400 font-medium uppercase mt-0.5">Turnuva Hedefi</div>
+                        <div class="text-xs text-zinc-400 font-bold uppercase mt-1">VCT Challengers</div>
                     </div>
-                    <div>
-                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-display">%100</div>
-                        <div class="text-xs text-zinc-400 font-medium uppercase mt-0.5">Koç & VOD Desteği</div>
+                    <div class="glass-panel p-4 rounded-2xl border border-white/10">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-display">6+ Gün</div>
+                        <div class="text-xs text-zinc-400 font-bold uppercase mt-1">Haftalık Scrim</div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Right Column: Visual Composition with High-Res Valorant Agents -->
+            <!-- Right Column: Cinematic Esports Thumbnail Card with Valorant Agents -->
             <div class="lg:col-span-5 relative flex items-center justify-center">
-                <!-- Large Glow Backdrop -->
-                <div class="absolute inset-0 bg-gradient-to-tr from-valRed/30 via-transparent to-white/10 rounded-full blur-3xl"></div>
+                <!-- Outer Neon Glow -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-valRed/40 via-red-500/20 to-white/10 rounded-3xl blur-3xl"></div>
 
-                <!-- Showcase Glass Frame -->
-                <div class="relative w-full max-w-md glass-panel rounded-3xl p-6 border border-white/20 shadow-apple-glass overflow-hidden animate-hero-float">
+                <!-- Main Esports Card -->
+                <div class="relative w-full max-w-lg glass-panel rounded-3xl p-6 border border-white/20 shadow-apple-glass overflow-hidden animate-float-agent">
                     
-                    <!-- Decorative Valorant Header Elements -->
-                    <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                    <!-- Top HUD Bar -->
+                    <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/15">
                         <div class="flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-valRed"></span>
-                            <span class="font-mono text-xs font-bold text-zinc-300">ROSTER_RECRUIT_2026</span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-valRed animate-ping"></span>
+                            <span class="font-mono text-xs font-black text-white">VCT_MATCH_ROOM // BWE</span>
                         </div>
-                        <span class="px-2 py-0.5 rounded bg-white/10 text-[10px] font-mono text-white">STATUS: ACTIVE</span>
+                        <span class="px-2.5 py-1 rounded bg-valRed/20 border border-valRed/50 text-[11px] font-mono font-bold text-valRed">LIVE SCRIMS</span>
                     </div>
 
-                    <!-- Cutout Agent Collage Render (Sova + Jett official Valorant Renders) -->
-                    <div class="relative h-80 my-4 flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-[#1b1c26] to-[#0a0a0f]">
+                    <!-- Visual Thumbnail: Ascent Map Backdrop + 3D Agent Renders -->
+                    <div class="relative h-96 w-full rounded-2xl overflow-hidden bg-black/60 border border-white/10">
+                        
+                        <!-- Official Ascent Map 4K Splash Background -->
+                        <img src="https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/splash.png" 
+                             alt="Ascent Map Splash" 
+                             class="absolute inset-0 w-full h-full object-cover filter brightness-50 contrast-125 scale-105">
+                        
+                        <!-- Center Agent 1: Sova (Öncü) -->
                         <img src="https://media.valorant-api.com/agents/3207dd69-423c-4978-adc4-004a43425f75/fullportrait.png" 
-                             alt="Sova - Initiator" 
-                             class="absolute left-[-20px] bottom-[-20px] w-64 h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] opacity-95">
+                             alt="Sova" 
+                             class="absolute -left-6 -bottom-6 w-72 h-auto object-contain filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)] z-10">
+
+                        <!-- Center Agent 2: Jett (Düellocu) -->
                         <img src="https://media.valorant-api.com/agents/add6443a-41bd-e414-f6c8-48da1f05b4e3/fullportrait.png" 
-                             alt="Jett - Duelist" 
-                             class="absolute right-[-20px] bottom-[-30px] w-64 h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] opacity-95">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent"></div>
-                        <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between z-10">
-                            <span class="text-xs font-mono font-bold text-white bg-black/60 backdrop-blur px-2.5 py-1 rounded border border-white/10">SOVA (ÖNCÜ)</span>
-                            <span class="text-xs font-mono font-bold text-valRed bg-black/60 backdrop-blur px-2.5 py-1 rounded border border-valRed/30">JETT (DÜELLOCU)</span>
+                             alt="Jett" 
+                             class="absolute -right-6 -bottom-8 w-72 h-auto object-contain filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)] z-20">
+
+                        <!-- Center Agent 3: Reyna (Background Duelist) -->
+                        <img src="https://media.valorant-api.com/agents/a3bfb85b-422f-4457-a9a3-5e7945d77f72/fullportrait.png" 
+                             alt="Reyna" 
+                             class="absolute left-1/4 -top-6 w-44 h-auto object-contain filter opacity-60 z-0">
+
+                        <!-- Gradient Vignette inside card -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#090a10] via-transparent to-transparent z-20"></div>
+
+                        <!-- Card Overlays & Match Details -->
+                        <div class="absolute bottom-4 left-4 right-4 z-30 flex items-center justify-between">
+                            <div class="bg-black/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/15">
+                                <div class="text-[10px] font-mono text-zinc-400">HARİTA</div>
+                                <div class="text-xs font-black text-white font-display">ASCENT // A SITE</div>
+                            </div>
+                            <div class="bg-valRed/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/20 text-right">
+                                <div class="text-[10px] font-mono text-zinc-200">KADRO DURUMU</div>
+                                <div class="text-xs font-black text-white font-display">5/5 ROLLER AÇIK</div>
+                            </div>
                         </div>
+
                     </div>
 
-                    <!-- Card Footer -->
-                    <div class="bg-white/5 rounded-xl p-3 border border-white/10 text-center">
-                        <p class="text-xs text-zinc-300 font-semibold">
-                            Kadronun her parçasında sinerji arıyoruz. İstediğin rolü seç ve yeteneğini kanıtla!
-                        </p>
+                    <!-- Card Bottom Ticker -->
+                    <div class="mt-4 flex items-center justify-between text-xs text-zinc-300 font-semibold px-1">
+                        <span class="flex items-center gap-1.5">
+                            <span class="text-valRed font-bold">●</span> Koç & VOD Analisti Hazır
+                        </span>
+                        <span class="font-mono text-zinc-400">STATUS: RECRUITING</span>
                     </div>
 
                 </div>
@@ -325,105 +380,215 @@
         </div>
     </section>
 
-    <!-- ================= 4. ALL ROLES ANNOUNCEMENT & SHOWCASE WITH PHOTOS ================= -->
-    <section id="urgent" class="py-20 px-4 max-w-6xl mx-auto">
+    <!-- ================= 4. ESPORTS THUMBNAILS & ARENA MAP GALLERY ================= -->
+    <section id="gallery" class="py-20 px-4 max-w-7xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <div class="inline-block px-4 py-1.5 rounded-full bg-valRed/15 border border-valRed text-valRed text-xs font-extrabold uppercase tracking-widest mb-3">
-                GENİŞLETİLMİŞ KADRO ALIMI
+                BWE TAKTİK HARİTA HAVUZU
             </div>
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-display">TÜM ROLLERDE YENİ YETENEKLER</h2>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-display">TURNUVA & SCRIM ARENALARI</h2>
             <p class="text-base text-zinc-400 mt-4">
-                BWE bünyesinde sadece tek bir pozisyon değil; harita kontrolünü, taktik infoları ve giriş fraglerini birlikte taşıyacak komple bir ekip inşa ediyoruz.
+                BWE olarak antrenmanlarımızı VCT rekabetçi havuzundaki haritalar üzerinde yürütüyoruz. Her haritada ayrı bir strateji ve kadro kimyası!
             </p>
         </div>
 
-        <!-- 4 Major Role Cards with Agent Photos -->
+        <!-- 4 Grid Thumbnails with 4K Valorant Maps -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Map 1: Ascent -->
+            <div class="glass-card rounded-3xl overflow-hidden group border border-white/10 relative">
+                <div class="h-52 w-full relative overflow-hidden">
+                    <img src="https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/splash.png" 
+                         alt="Ascent" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#11131b] via-[#11131b]/30 to-transparent"></div>
+                    <span class="absolute top-3 left-3 bg-valRed text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md font-mono">
+                        SOVA & JETT ARENASI
+                    </span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-extrabold text-white font-display">Ascent</h3>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        Mid hakimiyeti, Sova dart açıları ve Killjoy B site kitlemeleri ile BWE'nin en yüksek kazanma oranına sahip ana haritası.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-zinc-400">
+                        <span>STRAT: MID CONTROL</span>
+                        <span class="text-valRed font-bold">%82 WR</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map 2: Bind -->
+            <div class="glass-card rounded-3xl overflow-hidden group border border-white/10 relative">
+                <div class="h-52 w-full relative overflow-hidden">
+                    <img src="https://media.valorant-api.com/maps/2c9d57ec-4431-9c5e-9339-8583774b0894/splash.png" 
+                         alt="Bind" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#11131b] via-[#11131b]/30 to-transparent"></div>
+                    <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-md text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md font-mono">
+                        DOUBLE CONTROLLER
+                    </span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-extrabold text-white font-display">Bind</h3>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        Brimstone & Viper ikilisiyle teleport rotasyonları, Fade prowler baskıları ve Raze satchel girişleriyle hızlı infazlar.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-zinc-400">
+                        <span>STRAT: HOOKAH PUSH</span>
+                        <span class="text-valRed font-bold">%78 WR</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map 3: Haven -->
+            <div class="glass-card rounded-3xl overflow-hidden group border border-white/10 relative">
+                <div class="h-52 w-full relative overflow-hidden">
+                    <img src="https://media.valorant-api.com/maps/2bee0dc3-4b63-44e6-b117-859acfc05541/splash.png" 
+                         alt="Haven" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#11131b] via-[#11131b]/30 to-transparent"></div>
+                    <span class="absolute top-3 left-3 bg-valRed text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md font-mono">
+                        3-SITE DEFENSE
+                    </span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-extrabold text-white font-display">Haven</h3>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        A, B ve C bombalama alanlarında Breach stun zamanlamaları, Omen paranoyaları ve Cypher kamera tuzaklarıyla kusursuz retake'ler.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-zinc-400">
+                        <span>STRAT: RETAKE FOCUS</span>
+                        <span class="text-valRed font-bold">%80 WR</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map 4: Abyss / Sunset -->
+            <div class="glass-card rounded-3xl overflow-hidden group border border-white/10 relative">
+                <div class="h-52 w-full relative overflow-hidden">
+                    <img src="https://media.valorant-api.com/maps/224b0a95-48b9-f703-1bd8-67aca101a61f/splash.png" 
+                         alt="Abyss" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#11131b] via-[#11131b]/30 to-transparent"></div>
+                    <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-md text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md font-mono">
+                        YENİ META ARENASI
+                    </span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-extrabold text-white font-display">Abyss</h3>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        Uçurumlu koridorlar ve dikey atlama mekaniklerinde Omen shrouded step ve Jett updraft pozisyonlarıyla rakipleri şaşırtıyoruz.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-zinc-400">
+                        <span>STRAT: VERTICAL META</span>
+                        <span class="text-valRed font-bold">%75 WR</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 5. ALL ROLES SHOWCASE WITH OFFICIAL AGENTS ================= -->
+    <section id="roles" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-valRed/15 border border-valRed text-valRed text-xs font-extrabold uppercase tracking-widest mb-3">
+                BWE OYUNCU SEÇMELERİ
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-display">TÜM ROLLERDE KADRO AÇIK</h2>
+            <p class="text-base text-zinc-400 mt-4">
+                Sadece bir rol değil; takım içi uyumu tamamlayacak her pozisyon için seçmelerimiz aktif!
+            </p>
+        </div>
+
+        <!-- 4 Role Cards with High-Res Overlapping Agents -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <!-- 1. DÜELLOCU (DUELIST) -->
             <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between overflow-hidden group">
-                <div class="absolute top-0 right-0 w-36 h-36 bg-red-600/10 rounded-full blur-2xl group-hover:bg-red-600/25 transition-all"></div>
+                <div class="absolute top-0 right-0 w-40 h-40 bg-red-600/15 rounded-full blur-3xl group-hover:bg-red-600/30 transition-all"></div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-2.5 py-1 rounded-lg bg-valRed text-white text-xs font-black uppercase tracking-wider">AÇIK POZİSYON</span>
+                        <span class="px-3 py-1 rounded-lg bg-valRed text-white text-xs font-black uppercase tracking-wider">AÇIK POZİSYON</span>
                         <span class="text-xs font-mono text-zinc-400">#01 ENTRY</span>
                     </div>
-                    <div class="h-44 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/40 my-3">
+                    <div class="h-48 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/50 my-3">
                         <img src="https://media.valorant-api.com/agents/add6443a-41bd-e414-f6c8-48da1f05b4e3/fullportrait.png" 
                              alt="Duelist Jett" 
-                             class="h-52 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500">
+                             class="h-56 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
                     </div>
                     <h3 class="text-xl font-extrabold text-white font-display mt-2">Düellocu (Duelist)</h3>
                     <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
-                        Space açabilen, First Blood korkusu olmayan, Jett, Reyna, Raze veya Yoru ile agresif ve akıllı oynayabilen oyuncular.
+                        Jett, Reyna, Raze veya Yoru ile ilk kanı alan, site'a agresif giren ve space açmaktan çekinmeyen mekanik canavarlar.
                     </p>
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-zinc-300">
                     <span>Beklenen: FK / FD Dengesi</span>
-                    <span class="text-valRed font-mono">1-2 Oyuncu</span>
+                    <span class="text-valRed font-mono font-bold">1-2 Oyuncu</span>
                 </div>
             </div>
 
             <!-- 2. ÖNCÜ (INITIATOR) -->
-            <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between overflow-hidden group border-valRed/30 shadow-neon-red">
-                <div class="absolute top-0 right-0 w-36 h-36 bg-valRed/20 rounded-full blur-2xl group-hover:bg-valRed/40 transition-all"></div>
+            <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between overflow-hidden group border-valRed/40 shadow-neon-red">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-valRed/25 rounded-full blur-3xl group-hover:bg-valRed/45 transition-all"></div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-2.5 py-1 rounded-lg bg-valRed text-white text-xs font-black uppercase tracking-wider">YÜKSEK ÖNCELİK</span>
+                        <span class="px-3 py-1 rounded-lg bg-valRed text-white text-xs font-black uppercase tracking-wider">YÜKSEK ÖNCELİK</span>
                         <span class="text-xs font-mono text-zinc-400">#02 RECON</span>
                     </div>
-                    <div class="h-44 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/40 my-3">
+                    <div class="h-48 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/50 my-3">
                         <img src="https://media.valorant-api.com/agents/3207dd69-423c-4978-adc4-004a43425f75/fullportrait.png" 
                              alt="Initiator Sova" 
-                             class="h-52 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500">
+                             class="h-56 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
                     </div>
                     <h3 class="text-xl font-extrabold text-white font-display mt-2">Öncü (Initiator)</h3>
                     <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
-                        Sova lineup'ları, Fade infoları, Breach/Skye flash zamanlamaları ve Gekko yetenekleriyle takımı sahaya sokan beyinler.
+                        Sova lineup ezberleri olan, Fade haunter zamanlamalarına hakim, Breach/Skye flashlarıyla takımı site'a sokan beyinler.
                     </p>
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-zinc-300">
-                    <span>Beklenen: Lineup & Timing</span>
-                    <span class="text-valRed font-mono">1-2 Oyuncu</span>
+                    <span>Beklenen: Lineup & Utility</span>
+                    <span class="text-valRed font-mono font-bold">1-2 Oyuncu</span>
                 </div>
             </div>
 
             <!-- 3. KONTROL UZMANI (CONTROLLER) -->
             <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between overflow-hidden group">
-                <div class="absolute top-0 right-0 w-36 h-36 bg-purple-600/10 rounded-full blur-2xl group-hover:bg-purple-600/25 transition-all"></div>
+                <div class="absolute top-0 right-0 w-40 h-40 bg-purple-600/15 rounded-full blur-3xl group-hover:bg-purple-600/30 transition-all"></div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-2.5 py-1 rounded-lg bg-white/10 text-white text-xs font-black uppercase tracking-wider border border-white/20">AÇIK POZİSYON</span>
+                        <span class="px-3 py-1 rounded-lg bg-white/15 text-white text-xs font-black uppercase tracking-wider border border-white/20">AÇIK POZİSYON</span>
                         <span class="text-xs font-mono text-zinc-400">#03 SMOKES</span>
                     </div>
-                    <div class="h-44 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/40 my-3">
+                    <div class="h-48 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/50 my-3">
                         <img src="https://media.valorant-api.com/agents/8e253929-4c05-bf38-e641-04b30246c72a/fullportrait.png" 
                              alt="Controller Omen" 
-                             class="h-52 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500">
+                             class="h-56 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
                     </div>
                     <h3 class="text-xl font-extrabold text-white font-display mt-2">Kontrol Uzmanı (Controller)</h3>
                     <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
-                        Omen, Viper, Astra, Brimstone ve Clove ile görüş engelleyen, fake smoke atan ve harita haritası makro oynayan stratejistler.
+                        Omen, Viper, Astra ve Brimstone ile haritanın görüşünü kesen, one-way smoke atan ve fake taktikleri yöneten ustalar.
                     </p>
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-zinc-300">
-                    <span>Beklenen: Harita Hakimiyeti</span>
-                    <span class="text-valRed font-mono">1 Oyuncu</span>
+                    <span>Beklenen: Harita Makro Bilgisi</span>
+                    <span class="text-valRed font-mono font-bold">1 Oyuncu</span>
                 </div>
             </div>
 
             <!-- 4. GÖZCÜ (SENTINEL) -->
             <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between overflow-hidden group">
-                <div class="absolute top-0 right-0 w-36 h-36 bg-blue-600/10 rounded-full blur-2xl group-hover:bg-blue-600/25 transition-all"></div>
+                <div class="absolute top-0 right-0 w-40 h-40 bg-blue-600/15 rounded-full blur-3xl group-hover:bg-blue-600/30 transition-all"></div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-2.5 py-1 rounded-lg bg-white/10 text-white text-xs font-black uppercase tracking-wider border border-white/20">AÇIK POZİSYON</span>
+                        <span class="px-3 py-1 rounded-lg bg-white/15 text-white text-xs font-black uppercase tracking-wider border border-white/20">AÇIK POZİSYON</span>
                         <span class="text-xs font-mono text-zinc-400">#04 ANCHOR</span>
                     </div>
-                    <div class="h-44 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/40 my-3">
+                    <div class="h-48 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/50 my-3">
                         <img src="https://media.valorant-api.com/agents/1e58de9c-4950-5125-93e9-a0aee9f97b46/fullportrait.png" 
                              alt="Sentinel Killjoy" 
-                             class="h-52 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500">
+                             class="h-56 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
                     </div>
                     <h3 class="text-xl font-extrabold text-white font-display mt-2">Gözcü (Sentinel)</h3>
                     <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
@@ -432,16 +597,16 @@
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-zinc-300">
                     <span>Beklenen: Site Anchor Gücü</span>
-                    <span class="text-valRed font-mono">1 Oyuncu</span>
+                    <span class="text-valRed font-mono font-bold">1 Oyuncu</span>
                 </div>
             </div>
 
         </div>
 
         <!-- Flex & IGL Extra Banner -->
-        <div class="mt-8 glass-panel rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/15">
+        <div class="mt-8 glass-panel rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/20">
             <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-2xl bg-valRed/20 border border-valRed flex items-center justify-center text-valRed font-bold text-xl font-display shrink-0">
+                <div class="w-14 h-14 rounded-2xl bg-valRed/20 border border-valRed flex items-center justify-center text-valRed font-black text-2xl font-display shrink-0">
                     👑
                 </div>
                 <div>
@@ -451,13 +616,13 @@
                     </p>
                 </div>
             </div>
-            <a href="#apply" class="px-6 py-3 rounded-xl bg-white hover:bg-zinc-200 text-black font-extrabold text-xs sm:text-sm shrink-0 transition-transform hover:scale-105">
+            <a href="#apply" class="px-7 py-3.5 rounded-xl bg-white hover:bg-zinc-200 text-black font-black text-xs sm:text-sm shrink-0 transition-transform hover:scale-105 shadow-neon-glow">
                 Rolünü Seç ve Başvur
             </a>
         </div>
     </section>
 
-    <!-- ================= 5. APPLICATION FORM (ULTRA HIGH-CONTRAST & CRISP) ================= -->
+    <!-- ================= 6. APPLICATION FORM (ULTRA HIGH-CONTRAST & CRISP) ================= -->
     <section id="apply" class="py-20 px-4 max-w-4xl mx-auto">
         <div class="glass-panel rounded-3xl p-6 sm:p-10 md:p-12 border border-white/20 shadow-apple-glass relative">
             
@@ -466,12 +631,12 @@
                 <div>
                     <div class="flex items-center gap-2 mb-1.5">
                         <span class="w-2.5 h-2.5 rounded-full bg-valRed animate-ping"></span>
-                        <span class="text-xs font-mono font-bold text-valRed uppercase tracking-widest">BWE_OFFICIAL_TRYOUTS_2026</span>
+                        <span class="text-xs font-mono font-bold text-valRed uppercase tracking-widest">BWE_TRYOUTS_2026</span>
                     </div>
-                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white font-display">Oyuncu Başvuru Formu</h2>
-                    <p class="text-xs sm:text-sm text-zinc-300 mt-1">Formu eksiksiz doldur. Cevaplar doğrudan BWE Espor yönetim Discord odasına düşer.</p>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white font-display">BWE Oyuncu Başvuru Formu</h2>
+                    <p class="text-xs sm:text-sm text-zinc-300 mt-1">Cevaplar doğrudan BWE Espor yönetim Discord odasına düşer.</p>
                 </div>
-                <div class="flex items-center gap-2 bg-emerald-950/60 border border-emerald-500/50 px-3 py-2 rounded-xl text-xs font-mono text-emerald-300 font-bold self-start sm:self-auto">
+                <div class="flex items-center gap-2 bg-emerald-950/70 border border-emerald-500/50 px-3.5 py-2 rounded-xl text-xs font-mono text-emerald-300 font-bold self-start sm:self-auto shadow-inner">
                     <span>🛡️ DISCORD WEBHOOK AKTİF</span>
                 </div>
             </div>
@@ -515,7 +680,7 @@
                     </div>
                 </div>
 
-                <!-- SECTION 2: Riot & Rank (HIGH CONTRAST SELECT FIX) -->
+                <!-- SECTION 2: Riot & Rank -->
                 <div class="space-y-4 pt-4 border-t border-white/10">
                     <h3 class="text-xs font-extrabold uppercase tracking-widest text-valRed flex items-center gap-2">
                         <span class="w-5 h-5 rounded-md bg-valRed/20 text-valRed flex items-center justify-center font-mono">2</span>
@@ -525,7 +690,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="riotId">Riot ID ve Etiket (Tag) *</label>
-                            <input type="text" id="riotId" required placeholder="örn. BWE_Viper#TR1" 
+                            <input type="text" id="riotId" required placeholder="örn. BWE_Shadow#TR1" 
                                    class="w-full px-4 py-3.5 rounded-xl lux-input font-mono font-bold">
                         </div>
                         <div>
@@ -535,7 +700,6 @@
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="currentRank">Mevcut Rank *</label>
-                            <!-- Styled Select with Explicit Colors to eliminate browser white-bg bugs -->
                             <select id="currentRank" required class="w-full px-4 py-3.5 rounded-xl lux-input cursor-pointer font-bold">
                                 <option value="" disabled selected class="text-zinc-500">Mevcut Rank Seçiniz</option>
                                 <option value="Radiant">👑 Radiant</option>
@@ -557,14 +721,14 @@
                     </div>
                 </div>
 
-                <!-- SECTION 3: VISUAL ROLE SELECTION (TÜM ROLLER DAHİL) -->
+                <!-- SECTION 3: VISUAL ROLE SELECTION -->
                 <div class="space-y-4 pt-4 border-t border-white/10">
                     <div class="flex items-center justify-between">
                         <h3 class="text-xs font-extrabold uppercase tracking-widest text-valRed flex items-center gap-2">
                             <span class="w-5 h-5 rounded-md bg-valRed/20 text-valRed flex items-center justify-center font-mono">3</span>
                             BAŞVURDUĞUNUZ ANA ROL *
                         </h3>
-                        <span class="text-xs text-zinc-400 font-mono">Karttan Seçiniz</span>
+                        <span class="text-xs text-zinc-400 font-mono">Tıklayarak Seçiniz</span>
                     </div>
 
                     <!-- Interactive Role Grid with custom Radios -->
@@ -639,14 +803,14 @@
                     </div>
                 </div>
 
-                <!-- SECTION 4: ÖNCÜ & AJAN HAVUZU (DETAYLI SEÇİM) -->
+                <!-- SECTION 4: ÖNCÜ VE AJAN HAVUZU -->
                 <div class="space-y-4 pt-4 border-t border-white/10">
                     <div>
                         <h3 class="text-xs font-extrabold uppercase tracking-widest text-valRed flex items-center gap-2">
                             <span class="w-5 h-5 rounded-md bg-valRed/20 text-valRed flex items-center justify-center font-mono">4</span>
                             ÖNCÜ VE AJAN HAVUZUNUZ (EN ÇOK GÜVENDİKLERİNİZ)
                         </h3>
-                        <p class="text-xs text-zinc-300 mt-1">Öncü veya diğer ajanlardan hangilerini rekabetçi düzeyde oynayabiliyorsunuz? İşaretleyin:</p>
+                        <p class="text-xs text-zinc-300 mt-1">Oynayabildiğiniz tüm ajanları işaretleyiniz:</p>
                     </div>
 
                     <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
@@ -654,42 +818,42 @@
                         <div>
                             <input type="checkbox" id="ag_sova" value="Sova" class="hidden agent-checkbox agent-pool-opt">
                             <label for="ag_sova" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
-                                Sova
+                                🏹 Sova
                             </label>
                         </div>
                         <!-- Fade -->
                         <div>
                             <input type="checkbox" id="ag_fade" value="Fade" class="hidden agent-checkbox agent-pool-opt">
                             <label for="ag_fade" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
-                                Fade
+                                👁️ Fade
                             </label>
                         </div>
                         <!-- Breach -->
                         <div>
                             <input type="checkbox" id="ag_breach" value="Breach" class="hidden agent-checkbox agent-pool-opt">
                             <label for="ag_breach" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
-                                Breach
+                                💥 Breach
                             </label>
                         </div>
                         <!-- Gekko -->
                         <div>
                             <input type="checkbox" id="ag_gekko" value="Gekko" class="hidden agent-checkbox agent-pool-opt">
                             <label for="ag_gekko" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
-                                Gekko
+                                🦎 Gekko
                             </label>
                         </div>
                         <!-- Skye -->
                         <div>
                             <input type="checkbox" id="ag_skye" value="Skye" class="hidden agent-checkbox agent-pool-opt">
                             <label for="ag_skye" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
-                                Skye
+                                🦅 Skye
                             </label>
                         </div>
                         <!-- KAY/O -->
                         <div>
                             <input type="checkbox" id="ag_kayo" value="KAY/O" class="hidden agent-checkbox agent-pool-opt">
                             <label for="ag_kayo" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
-                                KAY/O
+                                🤖 KAY/O
                             </label>
                         </div>
                     </div>
@@ -716,7 +880,7 @@
 
                     <div>
                         <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="experience">Önceki Takımlarınız & Turnuva Tecrübeniz *</label>
-                        <textarea id="experience" rows="3" required placeholder="Daha önce oynadığınız espor organizasyonları, katıldığınız turnuvalar (ESA, VCT Açık Elemeleri vb.)..." 
+                        <textarea id="experience" rows="3" required placeholder="Daha önce oynadığınız espor takımları, katıldığınız turnuvalar (ESA, VCT Açık Elemeleri vb.)..." 
                                   class="w-full px-4 py-3.5 rounded-xl lux-input resize-none"></textarea>
                     </div>
 
@@ -743,7 +907,7 @@
                 <!-- Submit Button -->
                 <div class="flex items-center justify-end pt-4">
                     <button type="submit" id="submitBtn" 
-                            class="w-full sm:w-auto px-12 py-4 rounded-xl bg-valRed hover:bg-valRedHover text-white font-extrabold text-base tracking-wide shadow-neon-red hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3">
+                            class="w-full sm:w-auto px-12 py-4 rounded-xl bg-valRed hover:bg-valRedDark text-white font-black text-base tracking-wide shadow-neon-red hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3">
                         <span id="btnText">BAŞVURUYU GÖNDER</span>
                         <svg id="btnSpinner" class="hidden animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -757,18 +921,18 @@
         </div>
     </section>
 
-    <!-- ================= 6. FOOTER ================= -->
+    <!-- ================= 7. FOOTER ================= -->
     <footer class="border-t border-white/10 py-12 px-4 mt-16 bg-[#060608]">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-valRed flex items-center justify-center text-white font-black font-display text-sm">
+                <div class="w-9 h-9 rounded-xl bg-valRed flex items-center justify-center text-white font-black font-display text-sm">
                     BWE
                 </div>
                 <span class="font-bold text-zinc-200">© 2026 Black White Esports (BWE). Tüm hakları saklıdır.</span>
             </div>
             <div class="flex items-center gap-6 font-semibold">
                 <span>Valorant Competitive Division</span>
-                <span>All Roles Active Recruitment</span>
+                <span>VCT Road to Ascension</span>
             </div>
         </div>
     </footer>
