@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black White Esports (BWE) | Valorant Pro Kadro Alımı</title>
+    <meta name="description" content="Black White Esports (BWE) Valorant takımı tüm rollerde (Öncü, Düellocu, Kontrol, Gözcü, Flex) profesyonel oyuncu seçmeleri!">
+    
+    <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Teko:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        valRed: '#FF4655',
+                        valRedHover: '#ff2b3d',
+                        valDark: '#08090C',
+                        valCard: '#111218',
+                        valBorder: '#232530',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        teko: ['"Teko"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-red': '0 0 35px -5px rgba(255, 70, 85, 0.45)',
+                        'neon-white': '0 0 30px -5px rgba(255, 255, 255, 0.25)',
+                        'apple-glass': '0 20px 50px rgba(0, 0, 0, 0.7)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #07080b;
+            color: #ffffff;
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        ::selection {
+            background: #FF4655;
+            color: #ffffff;
+        }
+
+        /* FIX CRITICAL NATIVE DROPDOWN CONTRAST ISSUE */
+        select, option {
+            background-color: #12131a !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+        select option:hover, select option:checked {
+            background-color: #FF4655 !important;
+            color: #ffffff !important;
+        }
+
+        /* Apple Glass Panels */
+        .glass-panel {
+            background: rgba(17, 18, 25, 0.85);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .glass-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(20, 21, 30, 0.9) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 70, 85, 0.6);
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 70, 85, 0.2);
+        }
+
+        /* High-contrast Apple Input Fields */
+        .lux-input {
+            background: #0f1017 !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+            color: #ffffff !important;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.25s ease;
+        }
+
+        .lux-input::placeholder {
+            color: #717588 !important;
+            font-weight: 400;
+        }
+
+        .lux-input:focus {
+            background: #141622 !important;
+            border-color: #FF4655 !important;
+            box-shadow: 0 0 0 4px rgba(255, 70, 85, 0.3) !important;
+            outline: none;
+        }
+
+        /* Role Selector Radio Cards */
+        .role-radio:checked + label {
+            background: linear-gradient(135deg, rgba(255, 70, 85, 0.25) 0%, rgba(255, 70, 85, 0.05) 100%);
+            border-color: #FF4655;
+            box-shadow: 0 0 25px rgba(255, 70, 85, 0.45);
+        }
+        .role-radio:checked + label .check-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Agent Checkbox Pills */
+        .agent-checkbox:checked + label {
+            background: #FF4655;
+            border-color: #FF4655;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(255, 70, 85, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Ticker Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 22s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Ambient Glow Animations */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.08); }
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 6s ease-in-out infinite;
+        }
+
+        /* Floating Agent Art */
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+        }
+        .animate-hero-float {
+            animation: heroFloat 7s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Ambient Glowing Blurs -->
+    <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-red-600/20 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-glow"></div>
+    <div class="fixed bottom-1/4 right-0 w-[550px] h-[550px] bg-white/10 rounded-full blur-[150px] pointer-events-none -z-10 animate-pulse-glow" style="animation-delay: 3s;"></div>
+
+    <!-- ================= 1. URGENT RECRUITMENT TICKER (DUYURU) ================= -->
+    <div class="sticky top-0 z-50 bg-gradient-to-r from-valRed via-[#c81928] to-valRed text-white text-xs md:text-sm font-extrabold uppercase tracking-wider py-2 overflow-hidden shadow-lg border-b border-white/20">
+        <div class="animate-marquee whitespace-nowrap items-center flex gap-12 font-display">
+            <span class="flex items-center gap-2">🔥 <strong>RESMİ DUYURU:</strong> BLACK WHITE ESPORTS (BWE) <strong>TÜM ROLLERDE</strong> (DÜELLOCU, ÖNCÜ, KONTROL, GÖZCÜ, FLEX, IGL) AKTİF KADRO ALIMI YAPIYOR!</span>
+            <span class="flex items-center gap-2">⚡ <strong>HEDEF:</strong> VCT CHALLENGERS & ASCENSION ELEMELERİ</span>
+            <span class="flex items-center gap-2">🎯 <strong>MİNİMUM KRİTER:</strong> IMMORTAL / RADIANT TECRÜBESİ</span>
+            <span class="flex items-center gap-2">🛡️ <strong>BWE:</strong> SIFIR BAHANE, PROFESYONEL KOÇLUK & VOD ANALİZİ</span>
+            <!-- Duplicate for infinite seamless loop -->
+            <span class="flex items-center gap-2">🔥 <strong>RESMİ DUYURU:</strong> BLACK WHITE ESPORTS (BWE) <strong>TÜM ROLLERDE</strong> (DÜELLOCU, ÖNCÜ, KONTROL, GÖZCÜ, FLEX, IGL) AKTİF KADRO ALIMI YAPIYOR!</span>
+            <span class="flex items-center gap-2">⚡ <strong>HEDEF:</strong> VCT CHALLENGERS & ASCENSION ELEMELERİ</span>
+            <span class="flex items-center gap-2">🎯 <strong>MİNİMUM KRİTER:</strong> IMMORTAL / RADIANT TECRÜBESİ</span>
+            <span class="flex items-center gap-2">🛡️ <strong>BWE:</strong> SIFIR BAHANE, PROFESYONEL KOÇLUK & VOD ANALİZİ</span>
+        </div>
+    </div>
+
+    <!-- ================= 2. APPLE-STYLE FLOATING NAVBAR ================= -->
+    <div class="px-4 pt-4 max-w-6xl mx-auto">
+        <nav class="glass-panel rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-apple-glass border border-white/15">
+            <!-- Brand & Custom SVG Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-white via-zinc-200 to-zinc-700 p-0.5 shadow-neon-white group-hover:scale-105 transition-all duration-300">
+                    <div class="w-full h-full bg-[#0a0b10] rounded-[10px] flex items-center justify-center relative overflow-hidden">
+                        <!-- Custom Geometric BWE Monogram -->
+                        <svg viewBox="0 0 100 100" class="w-8 h-8 fill-none">
+                            <polygon points="50,10 88,32 88,68 50,90 12,68 12,32" stroke="white" stroke-width="6" stroke-linejoin="round" class="opacity-90"/>
+                            <!-- BWE stylized mark -->
+                            <path d="M30 35 H55 C65 35 65 50 55 50 H30 M30 50 H58 C70 50 70 65 58 65 H30" stroke="#FF4655" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-display font-extrabold text-xl tracking-wider text-white flex items-center gap-2">
+                        BLACK WHITE <span class="text-xs bg-valRed px-2 py-0.5 rounded text-white font-sans font-bold">ESPORTS</span>
+                    </div>
+                    <span class="text-[11px] font-mono tracking-widest text-zinc-400 uppercase">TAG: BWE // VALORANT DIVISION</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center gap-8 text-sm font-bold text-zinc-300">
+                <a href="#urgent" class="hover:text-valRed transition-colors">Tüm Roller</a>
+                <a href="#agents" class="hover:text-valRed transition-colors">Ajan Kadrosu</a>
+                <a href="#stats" class="hover:text-valRed transition-colors">Takım Standartları</a>
+                <a href="#apply" class="hover:text-valRed transition-colors">Kadroya Başvur</a>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#apply" class="px-6 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-black font-extrabold text-sm transition-all duration-300 transform hover:scale-105 shadow-neon-white flex items-center gap-2">
+                <span>Başvuru Yap</span>
+                <svg class="w-4 h-4 text-valRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+        </nav>
+    </div>
+
+    <!-- ================= 3. HERO SECTION WITH AGENT PHOTOS ================= -->
+    <section class="relative pt-12 pb-24 px-4 overflow-hidden">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Column: Copy & Urgency -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-valRed/15 border border-valRed/40 text-xs md:text-sm font-bold text-valRed shadow-neon-red">
+                    <span class="w-2.5 h-2.5 rounded-full bg-valRed animate-ping"></span>
+                    <span>TÜM ROLLERDE KADRO KURULUYOR • 2026 TRYOUTS</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl xl:text-7xl font-extrabold font-display tracking-tight text-white leading-none">
+                    ZİRVEYE OYNA.<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-300 to-valRed">
+                        BWE KADROSUNA GİR.
+                    </span>
+                </h1>
+
+                <p class="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-xl">
+                    <strong class="text-white font-bold">Black White Esports</strong>, Türkiye ve EMEA arenasında mücadele edecek Valorant 5'lisini tamamlıyor. 
+                    <span class="text-valRed font-semibold underline decoration-valRed/50">Düellocu, Öncü, Kontrol Uzmanı, Gözcü ve Flex</span> pozisyonlarının tümünde elit oyuncular arıyoruz.
+                </p>
+
+                <!-- Quick Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 pt-2 justify-center lg:justify-start">
+                    <a href="#apply" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-valRed hover:bg-valRedHover text-white font-extrabold text-base transition-all transform hover:scale-105 shadow-neon-red flex items-center justify-center gap-3">
+                        <span>BAŞVURU FORMUNA GİT</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                    </a>
+                    <a href="#urgent" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel hover:bg-white/10 text-white font-bold text-base transition-all border border-white/20 flex items-center justify-center gap-2">
+                        <span>Açık Pozisyonları Gör</span>
+                    </a>
+                </div>
+
+                <!-- Verified Stats Bar -->
+                <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-display">5/5</div>
+                        <div class="text-xs text-zinc-400 font-medium uppercase mt-0.5">Tüm Roller Açık</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-valRed font-display">T1 / T2</div>
+                        <div class="text-xs text-zinc-400 font-medium uppercase mt-0.5">Turnuva Hedefi</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-display">%100</div>
+                        <div class="text-xs text-zinc-400 font-medium uppercase mt-0.5">Koç & VOD Desteği</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Visual Composition with High-Res Valorant Agents -->
+            <div class="lg:col-span-5 relative flex items-center justify-center">
+                <!-- Large Glow Backdrop -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-valRed/30 via-transparent to-white/10 rounded-full blur-3xl"></div>
+
+                <!-- Showcase Glass Frame -->
+                <div class="relative w-full max-w-md glass-panel rounded-3xl p-6 border border-white/20 shadow-apple-glass overflow-hidden animate-hero-float">
+                    
+                    <!-- Decorative Valorant Header Elements -->
+                    <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-valRed"></span>
+                            <span class="font-mono text-xs font-bold text-zinc-300">ROSTER_RECRUIT_2026</span>
+                        </div>
+                        <span class="px-2 py-0.5 rounded bg-white/10 text-[10px] font-mono text-white">STATUS: ACTIVE</span>
+                    </div>
+
+                    <!-- Cutout Agent Collage Render (Sova + Jett official Valorant Renders) -->
+                    <div class="relative h-80 my-4 flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-[#1b1c26] to-[#0a0a0f]">
+                        <img src="https://media.valorant-api.com/agents/3207dd69-423c-4978-adc4-004a43425f75/fullportrait.png" 
+                             alt="Sova - Initiator" 
+                             class="absolute left-[-20px] bottom-[-20px] w-64 h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] opacity-95">
+                        <img src="https://media.valorant-api.com/agents/add6443a-41bd-e414-f6c8-48da1f05b4e3/fullportrait.png" 
+                             alt="Jett - Duelist" 
+                             class="absolute right-[-20px] bottom-[-30px] w-64 h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] opacity-95">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent"></div>
+                        <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between z-10">
+                            <span class="text-xs font-mono font-bold text-white bg-black/60 backdrop-blur px-2.5 py-1 rounded border border-white/10">SOVA (ÖNCÜ)</span>
+                            <span class="text-xs font-mono font-bold text-valRed bg-black/60 backdrop-blur px-2.5 py-1 rounded border border-valRed/30">JETT (DÜELLOCU)</span>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer -->
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/10 text-center">
+                        <p class="text-xs text-zinc-300 font-semibold">
+                            Kadronun her parçasında sinerji arıyoruz. İstediğin rolü seç ve yeteneğini kanıtla!
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 4. ALL ROLES ANNOUNCEMENT & SHOWCASE WITH PHOTOS ================= -->
+    <section id="urgent" class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-valRed/15 border border-valRed text-valRed text-xs font-extrabold uppercase tracking-widest mb-3">
+                GENİŞLETİLMİŞ KADRO ALIMI
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-display">TÜM ROLLERDE YENİ YETENEKLER</h2>
+            <p class="text-base text-zinc-400 mt-4">
+                BWE bünyesinde sadece tek bir pozisyon değil; harita kontrolünü, taktik infoları ve giriş fraglerini birlikte taşıyacak komple bir ekip inşa ediyoruz.
+            </p>
+        </div>
+
+        <!-- 4 Major Role Cards with Agent Photos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- 1. DÜELLOCU (DUELIST) -->
+            <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between overflow-hidden group">
+                <div class="absolute top-0 right-0 w-36 h-36 bg-red-600/10 rounded-full blur-2xl group-hover:bg-red-600/25 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-2.5 py-1 rounded-lg bg-valRed text-white text-xs font-black uppercase tracking-wider">AÇIK POZİSYON</span>
+                        <span class="text-xs font-mono text-zinc-400">#01 ENTRY</span>
+                    </div>
+                    <div class="h-44 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/40 my-3">
+                        <img src="https://media.valorant-api.com/agents/add6443a-41bd-e414-f6c8-48da1f05b4e3/fullportrait.png" 
+                             alt="Duelist Jett" 
+                             class="h-52 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white font-display mt-2">Düellocu (Duelist)</h3>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        Space açabilen, First Blood korkusu olmayan, Jett, Reyna, Raze veya Yoru ile agresif ve akıllı oynayabilen oyuncular.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-zinc-300">
+                    <span>Beklenen: FK / FD Dengesi</span>
+                    <span class="text-valRed font-mono">1-2 Oyuncu</span>
+                </div>
+            </div>
+
+            <!-- 2. ÖNCÜ (INITIATOR) -->
+            <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between overflow-hidden group border-valRed/30 shadow-neon-red">
+                <div class="absolute top-0 right-0 w-36 h-36 bg-valRed/20 rounded-full blur-2xl group-hover:bg-valRed/40 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-2.5 py-1 rounded-lg bg-valRed text-white text-xs font-black uppercase tracking-wider">YÜKSEK ÖNCELİK</span>
+                        <span class="text-xs font-mono text-zinc-400">#02 RECON</span>
+                    </div>
+                    <div class="h-44 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/40 my-3">
+                        <img src="https://media.valorant-api.com/agents/3207dd69-423c-4978-adc4-004a43425f75/fullportrait.png" 
+                             alt="Initiator Sova" 
+                             class="h-52 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white font-display mt-2">Öncü (Initiator)</h3>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        Sova lineup'ları, Fade infoları, Breach/Skye flash zamanlamaları ve Gekko yetenekleriyle takımı sahaya sokan beyinler.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-zinc-300">
+                    <span>Beklenen: Lineup & Timing</span>
+                    <span class="text-valRed font-mono">1-2 Oyuncu</span>
+                </div>
+            </div>
+
+            <!-- 3. KONTROL UZMANI (CONTROLLER) -->
+            <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between overflow-hidden group">
+                <div class="absolute top-0 right-0 w-36 h-36 bg-purple-600/10 rounded-full blur-2xl group-hover:bg-purple-600/25 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-2.5 py-1 rounded-lg bg-white/10 text-white text-xs font-black uppercase tracking-wider border border-white/20">AÇIK POZİSYON</span>
+                        <span class="text-xs font-mono text-zinc-400">#03 SMOKES</span>
+                    </div>
+                    <div class="h-44 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/40 my-3">
+                        <img src="https://media.valorant-api.com/agents/8e253929-4c05-bf38-e641-04b30246c72a/fullportrait.png" 
+                             alt="Controller Omen" 
+                             class="h-52 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white font-display mt-2">Kontrol Uzmanı (Controller)</h3>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        Omen, Viper, Astra, Brimstone ve Clove ile görüş engelleyen, fake smoke atan ve harita haritası makro oynayan stratejistler.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-zinc-300">
+                    <span>Beklenen: Harita Hakimiyeti</span>
+                    <span class="text-valRed font-mono">1 Oyuncu</span>
+                </div>
+            </div>
+
+            <!-- 4. GÖZCÜ (SENTINEL) -->
+            <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between overflow-hidden group">
+                <div class="absolute top-0 right-0 w-36 h-36 bg-blue-600/10 rounded-full blur-2xl group-hover:bg-blue-600/25 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-2.5 py-1 rounded-lg bg-white/10 text-white text-xs font-black uppercase tracking-wider border border-white/20">AÇIK POZİSYON</span>
+                        <span class="text-xs font-mono text-zinc-400">#04 ANCHOR</span>
+                    </div>
+                    <div class="h-44 w-full relative flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/40 my-3">
+                        <img src="https://media.valorant-api.com/agents/1e58de9c-4950-5125-93e9-a0aee9f97b46/fullportrait.png" 
+                             alt="Sentinel Killjoy" 
+                             class="h-52 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white font-display mt-2">Gözcü (Sentinel)</h3>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        Killjoy taretleri, Cypher tuzakları ve Vyse duvarlarıyla arkasını kollayan ve bombalanmış site'ı tek başına tutabilen savunucular.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-zinc-300">
+                    <span>Beklenen: Site Anchor Gücü</span>
+                    <span class="text-valRed font-mono">1 Oyuncu</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Flex & IGL Extra Banner -->
+        <div class="mt-8 glass-panel rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/15">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-valRed/20 border border-valRed flex items-center justify-center text-valRed font-bold text-xl font-display shrink-0">
+                    👑
+                </div>
+                <div>
+                    <h4 class="text-lg font-extrabold text-white font-display">IGL (In-Game Leader) ve Flex Oyuncular da Aranıyor!</h4>
+                    <p class="text-xs sm:text-sm text-zinc-300 mt-1">
+                        Maç içinde mikro/makro callout yapabilen, clutch anlarında soğukkanlı kaptanlık üstlenebilecek oyuncular doğrudan öncelikli mülakata alınır.
+                    </p>
+                </div>
+            </div>
+            <a href="#apply" class="px-6 py-3 rounded-xl bg-white hover:bg-zinc-200 text-black font-extrabold text-xs sm:text-sm shrink-0 transition-transform hover:scale-105">
+                Rolünü Seç ve Başvur
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= 5. APPLICATION FORM (ULTRA HIGH-CONTRAST & CRISP) ================= -->
+    <section id="apply" class="py-20 px-4 max-w-4xl mx-auto">
+        <div class="glass-panel rounded-3xl p-6 sm:p-10 md:p-12 border border-white/20 shadow-apple-glass relative">
+            
+            <!-- Form Header -->
+            <div class="border-b border-white/15 pb-8 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-valRed animate-ping"></span>
+                        <span class="text-xs font-mono font-bold text-valRed uppercase tracking-widest">BWE_OFFICIAL_TRYOUTS_2026</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white font-display">Oyuncu Başvuru Formu</h2>
+                    <p class="text-xs sm:text-sm text-zinc-300 mt-1">Formu eksiksiz doldur. Cevaplar doğrudan BWE Espor yönetim Discord odasına düşer.</p>
+                </div>
+                <div class="flex items-center gap-2 bg-emerald-950/60 border border-emerald-500/50 px-3 py-2 rounded-xl text-xs font-mono text-emerald-300 font-bold self-start sm:self-auto">
+                    <span>🛡️ DISCORD WEBHOOK AKTİF</span>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form id="recruitmentForm" class="space-y-8" onsubmit="handleFormSubmit(event)">
+
+                <!-- Bot Honeypot -->
+                <div class="hidden" aria-hidden="true">
+                    <input type="text" id="bwe_fax_honeypot" name="bwe_fax_honeypot" tabindex="-1" autocomplete="off">
+                </div>
+
+                <!-- SECTION 1: Kimlik & İletişim -->
+                <div class="space-y-4">
+                    <h3 class="text-xs font-extrabold uppercase tracking-widest text-valRed flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-md bg-valRed/20 text-valRed flex items-center justify-center font-mono">1</span>
+                        KİŞİSEL VE DİSCORD İLETİŞİM
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="fullName">Ad Soyad *</label>
+                            <input type="text" id="fullName" required placeholder="örn. Burak Kaya" 
+                                   class="w-full px-4 py-3.5 rounded-xl lux-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="age">Yaşınız *</label>
+                            <input type="number" id="age" required min="14" max="35" placeholder="örn. 19" 
+                                   class="w-full px-4 py-3.5 rounded-xl lux-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="discordUsername">Discord Kullanıcı Adınız *</label>
+                            <input type="text" id="discordUsername" required placeholder="örn. burak_bwe veya Burak#0001" 
+                                   class="w-full px-4 py-3.5 rounded-xl lux-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="city">Bulunduğunuz Şehir</label>
+                            <input type="text" id="city" placeholder="örn. Ankara / İstanbul" 
+                                   class="w-full px-4 py-3.5 rounded-xl lux-input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: Riot & Rank (HIGH CONTRAST SELECT FIX) -->
+                <div class="space-y-4 pt-4 border-t border-white/10">
+                    <h3 class="text-xs font-extrabold uppercase tracking-widest text-valRed flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-md bg-valRed/20 text-valRed flex items-center justify-center font-mono">2</span>
+                        RIOT ID VE RANK DURUMU
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="riotId">Riot ID ve Etiket (Tag) *</label>
+                            <input type="text" id="riotId" required placeholder="örn. BWE_Viper#TR1" 
+                                   class="w-full px-4 py-3.5 rounded-xl lux-input font-mono font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="trackerLink">Tracker.gg Linki (Varsa)</label>
+                            <input type="url" id="trackerLink" placeholder="https://tracker.gg/valorant/profile/..." 
+                                   class="w-full px-4 py-3.5 rounded-xl lux-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="currentRank">Mevcut Rank *</label>
+                            <!-- Styled Select with Explicit Colors to eliminate browser white-bg bugs -->
+                            <select id="currentRank" required class="w-full px-4 py-3.5 rounded-xl lux-input cursor-pointer font-bold">
+                                <option value="" disabled selected class="text-zinc-500">Mevcut Rank Seçiniz</option>
+                                <option value="Radiant">👑 Radiant</option>
+                                <option value="Immortal 3">🔥 Immortal 3</option>
+                                <option value="Immortal 2">🔥 Immortal 2</option>
+                                <option value="Immortal 1">🔥 Immortal 1</option>
+                                <option value="Ascendant 3">💎 Ascendant 3</option>
+                                <option value="Ascendant 2">💎 Ascendant 2</option>
+                                <option value="Ascendant 1">💎 Ascendant 1</option>
+                                <option value="Diamond 3">💠 Diamond 3</option>
+                                <option value="Diğer">Diğer</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="peakRank">Kariyer Peak Rank ve RR *</label>
+                            <input type="text" id="peakRank" required placeholder="örn. Immortal 3 - 420 RR" 
+                                   class="w-full px-4 py-3.5 rounded-xl lux-input font-bold">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: VISUAL ROLE SELECTION (TÜM ROLLER DAHİL) -->
+                <div class="space-y-4 pt-4 border-t border-white/10">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xs font-extrabold uppercase tracking-widest text-valRed flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-md bg-valRed/20 text-valRed flex items-center justify-center font-mono">3</span>
+                            BAŞVURDUĞUNUZ ANA ROL *
+                        </h3>
+                        <span class="text-xs text-zinc-400 font-mono">Karttan Seçiniz</span>
+                    </div>
+
+                    <!-- Interactive Role Grid with custom Radios -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        
+                        <!-- Öncü -->
+                        <div>
+                            <input type="radio" id="role_initiator" name="primaryRole" value="Öncü (Initiator)" class="hidden role-radio" required>
+                            <label for="role_initiator" class="flex flex-col items-center justify-center p-4 rounded-2xl glass-card cursor-pointer border border-white/10 text-center transition-all relative select-none">
+                                <span class="text-2xl mb-1">🏹</span>
+                                <span class="text-sm font-extrabold text-white">Öncü</span>
+                                <span class="text-[10px] text-zinc-400 mt-0.5">Sova, Fade, Breach</span>
+                                <span class="check-icon opacity-0 absolute top-2 right-2 text-valRed text-xs font-bold">✓</span>
+                            </label>
+                        </div>
+
+                        <!-- Düellocu -->
+                        <div>
+                            <input type="radio" id="role_duelist" name="primaryRole" value="Düellocu (Duelist)" class="hidden role-radio">
+                            <label for="role_duelist" class="flex flex-col items-center justify-center p-4 rounded-2xl glass-card cursor-pointer border border-white/10 text-center transition-all relative select-none">
+                                <span class="text-2xl mb-1">⚔️</span>
+                                <span class="text-sm font-extrabold text-white">Düellocu</span>
+                                <span class="text-[10px] text-zinc-400 mt-0.5">Jett, Reyna, Raze</span>
+                                <span class="check-icon opacity-0 absolute top-2 right-2 text-valRed text-xs font-bold">✓</span>
+                            </label>
+                        </div>
+
+                        <!-- Kontrol -->
+                        <div>
+                            <input type="radio" id="role_controller" name="primaryRole" value="Kontrol Uzmanı (Controller)" class="hidden role-radio">
+                            <label for="role_controller" class="flex flex-col items-center justify-center p-4 rounded-2xl glass-card cursor-pointer border border-white/10 text-center transition-all relative select-none">
+                                <span class="text-2xl mb-1">💨</span>
+                                <span class="text-sm font-extrabold text-white">Kontrol</span>
+                                <span class="text-[10px] text-zinc-400 mt-0.5">Omen, Viper, Astra</span>
+                                <span class="check-icon opacity-0 absolute top-2 right-2 text-valRed text-xs font-bold">✓</span>
+                            </label>
+                        </div>
+
+                        <!-- Gözcü -->
+                        <div>
+                            <input type="radio" id="role_sentinel" name="primaryRole" value="Gözcü (Sentinel)" class="hidden role-radio">
+                            <label for="role_sentinel" class="flex flex-col items-center justify-center p-4 rounded-2xl glass-card cursor-pointer border border-white/10 text-center transition-all relative select-none">
+                                <span class="text-2xl mb-1">🛡️</span>
+                                <span class="text-sm font-extrabold text-white">Gözcü</span>
+                                <span class="text-[10px] text-zinc-400 mt-0.5">Killjoy, Cypher</span>
+                                <span class="check-icon opacity-0 absolute top-2 right-2 text-valRed text-xs font-bold">✓</span>
+                            </label>
+                        </div>
+
+                        <!-- Flex -->
+                        <div>
+                            <input type="radio" id="role_flex" name="primaryRole" value="Flex (Çoklu Rol)" class="hidden role-radio">
+                            <label for="role_flex" class="flex flex-col items-center justify-center p-4 rounded-2xl glass-card cursor-pointer border border-white/10 text-center transition-all relative select-none">
+                                <span class="text-2xl mb-1">⚡</span>
+                                <span class="text-sm font-extrabold text-white">Flex</span>
+                                <span class="text-[10px] text-zinc-400 mt-0.5">Çoklu Rol Yetkinliği</span>
+                                <span class="check-icon opacity-0 absolute top-2 right-2 text-valRed text-xs font-bold">✓</span>
+                            </label>
+                        </div>
+
+                        <!-- IGL -->
+                        <div>
+                            <input type="radio" id="role_igl" name="primaryRole" value="IGL (Kaptan / Lider)" class="hidden role-radio">
+                            <label for="role_igl" class="flex flex-col items-center justify-center p-4 rounded-2xl glass-card cursor-pointer border border-white/10 text-center transition-all relative select-none">
+                                <span class="text-2xl mb-1">👑</span>
+                                <span class="text-sm font-extrabold text-white">IGL / Kaptan</span>
+                                <span class="text-[10px] text-zinc-400 mt-0.5">Oyun İçi Lider</span>
+                                <span class="check-icon opacity-0 absolute top-2 right-2 text-valRed text-xs font-bold">✓</span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- SECTION 4: ÖNCÜ & AJAN HAVUZU (DETAYLI SEÇİM) -->
+                <div class="space-y-4 pt-4 border-t border-white/10">
+                    <div>
+                        <h3 class="text-xs font-extrabold uppercase tracking-widest text-valRed flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-md bg-valRed/20 text-valRed flex items-center justify-center font-mono">4</span>
+                            ÖNCÜ VE AJAN HAVUZUNUZ (EN ÇOK GÜVENDİKLERİNİZ)
+                        </h3>
+                        <p class="text-xs text-zinc-300 mt-1">Öncü veya diğer ajanlardan hangilerini rekabetçi düzeyde oynayabiliyorsunuz? İşaretleyin:</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
+                        <!-- Sova -->
+                        <div>
+                            <input type="checkbox" id="ag_sova" value="Sova" class="hidden agent-checkbox agent-pool-opt">
+                            <label for="ag_sova" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
+                                Sova
+                            </label>
+                        </div>
+                        <!-- Fade -->
+                        <div>
+                            <input type="checkbox" id="ag_fade" value="Fade" class="hidden agent-checkbox agent-pool-opt">
+                            <label for="ag_fade" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
+                                Fade
+                            </label>
+                        </div>
+                        <!-- Breach -->
+                        <div>
+                            <input type="checkbox" id="ag_breach" value="Breach" class="hidden agent-checkbox agent-pool-opt">
+                            <label for="ag_breach" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
+                                Breach
+                            </label>
+                        </div>
+                        <!-- Gekko -->
+                        <div>
+                            <input type="checkbox" id="ag_gekko" value="Gekko" class="hidden agent-checkbox agent-pool-opt">
+                            <label for="ag_gekko" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
+                                Gekko
+                            </label>
+                        </div>
+                        <!-- Skye -->
+                        <div>
+                            <input type="checkbox" id="ag_skye" value="Skye" class="hidden agent-checkbox agent-pool-opt">
+                            <label for="ag_skye" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
+                                Skye
+                            </label>
+                        </div>
+                        <!-- KAY/O -->
+                        <div>
+                            <input type="checkbox" id="ag_kayo" value="KAY/O" class="hidden agent-checkbox agent-pool-opt">
+                            <label for="ag_kayo" class="flex items-center justify-center py-2.5 px-3 rounded-xl lux-input cursor-pointer text-xs font-extrabold text-white select-none">
+                                KAY/O
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="agentListExtra">Diğer Oynadığınız Tüm Ajanlar (Düellocu / Smoke / Sentinel)</label>
+                        <input type="text" id="agentListExtra" placeholder="örn. Jett, Omen, Viper, Killjoy, Cypher" 
+                               class="w-full px-4 py-3.5 rounded-xl lux-input">
+                    </div>
+                </div>
+
+                <!-- SECTION 5: TECRÜBE VE MÜSAİTLİK -->
+                <div class="space-y-4 pt-4 border-t border-white/10">
+                    <h3 class="text-xs font-extrabold uppercase tracking-widest text-valRed flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-md bg-valRed/20 text-valRed flex items-center justify-center font-mono">5</span>
+                        SCRIM SAATLERİ VE TAKIM TECRÜBESİ
+                    </h3>
+
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="availability">Haftalık Hangi Saatlerde Scrim / Antrenmana Uygunsunuz? *</label>
+                        <input type="text" id="availability" required placeholder="örn. Hafta içi her gün 19:30 - 24:00, Hafta sonu tüm gün." 
+                               class="w-full px-4 py-3.5 rounded-xl lux-input">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="experience">Önceki Takımlarınız & Turnuva Tecrübeniz *</label>
+                        <textarea id="experience" rows="3" required placeholder="Daha önce oynadığınız espor organizasyonları, katıldığınız turnuvalar (ESA, VCT Açık Elemeleri vb.)..." 
+                                  class="w-full px-4 py-3.5 rounded-xl lux-input resize-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-200 mb-1.5" for="whyBwe">Neden Black White Esports (BWE) ve Takıma Ne Katabilirsiniz?</label>
+                        <textarea id="whyBwe" rows="2" placeholder="Oyun tarzınız, iletişim yeteneğiniz ve BWE hedefleriniz..." 
+                                  class="w-full px-4 py-3.5 rounded-xl lux-input resize-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Kural Onayı -->
+                <div class="pt-2">
+                    <label class="flex items-start gap-3 cursor-pointer group">
+                        <input type="checkbox" id="commitmentRule" required class="mt-1 w-4 h-4 rounded border-white/20 bg-black text-valRed focus:ring-valRed">
+                        <span class="text-xs text-zinc-300 font-semibold group-hover:text-white leading-relaxed">
+                            BWE Esports kurallarını, antrenman disiplinini kabul ediyorum; toxiclik yapmayacağımı ve tryout sürecinde takım ruhuna bağlı kalacağımı taahhüt ederim.
+                        </span>
+                    </label>
+                </div>
+
+                <!-- Durum / Hata / Başarı Bildirimi -->
+                <div id="statusAlert" class="hidden p-5 rounded-2xl text-sm font-bold transition-all"></div>
+
+                <!-- Submit Button -->
+                <div class="flex items-center justify-end pt-4">
+                    <button type="submit" id="submitBtn" 
+                            class="w-full sm:w-auto px-12 py-4 rounded-xl bg-valRed hover:bg-valRedHover text-white font-extrabold text-base tracking-wide shadow-neon-red hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3">
+                        <span id="btnText">BAŞVURUYU GÖNDER</span>
+                        <svg id="btnSpinner" class="hidden animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+    <!-- ================= 6. FOOTER ================= -->
+    <footer class="border-t border-white/10 py-12 px-4 mt-16 bg-[#060608]">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-valRed flex items-center justify-center text-white font-black font-display text-sm">
+                    BWE
+                </div>
+                <span class="font-bold text-zinc-200">© 2026 Black White Esports (BWE). Tüm hakları saklıdır.</span>
+            </div>
+            <div class="flex items-center gap-6 font-semibold">
+                <span>Valorant Competitive Division</span>
+                <span>All Roles Active Recruitment</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPT: ANTI-SPAM & DISCORD WEBHOOK ================= -->
+    <script>
+        const WEBHOOK_URL = "https://discord.com/api/webhooks/1560302789173846121/mJ8BIRkL6gZIbls02gis5a9MmjCZMuTCcnaSYITD-D80bYOjSl3O3W-Qrl8rcjHheTJF";
+        const COOLDOWN_SECONDS = 60;
+
+        function sanitizeText(str) {
+            if (!str) return "Belirtilmedi";
+            return str
+                .replace(/@everyone/g, "@\u200beveryone")
+                .replace(/@here/g, "@\u200bhere")
+                .trim();
+        }
+
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+
+            const statusAlert = document.getElementById("statusAlert");
+            const submitBtn = document.getElementById("submitBtn");
+            const btnText = document.getElementById("btnText");
+            const btnSpinner = document.getElementById("btnSpinner");
+
+            // Reset Alert
+            statusAlert.className = "hidden p-5 rounded-2xl text-sm font-bold transition-all";
+            statusAlert.innerText = "";
+
+            // 1. Honeypot Check (Anti-Bot)
+            const honeypot = document.getElementById("bwe_fax_honeypot").value;
+            if (honeypot) {
+                statusAlert.className = "block p-5 rounded-2xl bg-red-950/80 border border-red-500 text-red-200 text-sm";
+                statusAlert.innerText = "Güvenlik doğrulaması başarısız oldu.";
+                return;
+            }
+
+            // 2. Cooldown Rate-Limit
+            const lastSubmitted = localStorage.getItem("bwe_last_sub_time");
+            const now = Date.now();
+            if (lastSubmitted && (now - parseInt(lastSubmitted)) < (COOLDOWN_SECONDS * 1000)) {
+                const waitSec = Math.ceil(((COOLDOWN_SECONDS * 1000) - (now - parseInt(lastSubmitted))) / 1000);
+                statusAlert.className = "block p-5 rounded-2xl bg-amber-950/80 border border-amber-500 text-amber-200 text-sm";
+                statusAlert.innerText = `Lütfen spam yapmayınız. Yeni bir başvuru göndermeden önce ${waitSec} saniye beklemelisiniz.`;
+                return;
+            }
+
+            // Gather inputs
+            const fullName = sanitizeText(document.getElementById("fullName").value);
+            const age = sanitizeText(document.getElementById("age").value);
+            const discordUsername = sanitizeText(document.getElementById("discordUsername").value);
+            const city = sanitizeText(document.getElementById("city").value);
+            const riotId = sanitizeText(document.getElementById("riotId").value);
+            const trackerLink = sanitizeText(document.getElementById("trackerLink").value);
+            const currentRank = sanitizeText(document.getElementById("currentRank").value);
+            const peakRank = sanitizeText(document.getElementById("peakRank").value);
+            
+            // Selected Primary Role
+            const roleEl = document.querySelector('input[name="primaryRole"]:checked');
+            const primaryRole = roleEl ? roleEl.value : "Belirtilmedi";
+
+            // Selected Agents
+            const selectedAgents = [];
+            document.querySelectorAll(".agent-pool-opt:checked").forEach(cb => selectedAgents.push(cb.value));
+            const agentsText = selectedAgents.length > 0 ? selectedAgents.join(", ") : "Özel seçim yapılmadı";
+
+            const agentListExtra = sanitizeText(document.getElementById("agentListExtra").value);
+            const availability = sanitizeText(document.getElementById("availability").value);
+            const experience = sanitizeText(document.getElementById("experience").value);
+            const whyBwe = sanitizeText(document.getElementById("whyBwe").value);
+
+            // Rich Discord Embed Payload
+            const embedPayload = {
+                username: "BWE Espor Başvuru Sistemi",
+                avatar_url: "https://media.valorant-api.com/agents/3207dd69-423c-4978-adc4-004a43425f75/displayicon.png",
+                embeds: [
+                    {
+                        title: `⚔️ YENİ OYUNCU BAŞVURUSU: [${primaryRole}]`,
+                        description: `**${fullName}** kadroya katılmak için başvuruda bulundu. Detaylar aşağıdadır:`,
+                        color: 16729685, // Valorant Red #FF4655
+                        fields: [
+                            {
+                                name: "👤 Aday Kimliği",
+                                value: `**Ad:** ${fullName}\n**Yaş:** ${age}\n**Konum:** ${city}`,
+                                inline: true
+                            },
+                            {
+                                name: "💬 Discord İletişim",
+                                value: `\`${discordUsername}\``,
+                                inline: true
+                            },
+                            {
+                                name: "🎯 Başvurulan Rol",
+                                value: `🔥 **${primaryRole}**`,
+                                inline: true
+                            },
+                            {
+                                name: "🎮 Riot ID & Tag",
+                                value: `\`${riotId}\``,
+                                inline: true
+                            },
+                            {
+                                name: "🏆 Rank Durumu",
+                                value: `**Mevcut:** ${currentRank}\n**Peak:** ${peakRank}`,
+                                inline: true
+                            },
+                            {
+                                name: "🔗 Tracker Profili",
+                                value: trackerLink.startsWith("http") ? `[Tracker Sayfası](${trackerLink})` : "Belirtilmedi",
+                                inline: true
+                            },
+                            {
+                                name: "🦅 Seçilen Öncü / Ana Ajanlar",
+                                value: `>>> **${agentsText}**`,
+                                inline: false
+                            },
+                            {
+                                name: "⚡ Ek Ajan Havuzu",
+                                value: agentListExtra,
+                                inline: false
+                            },
+                            {
+                                name: "⏰ Scrim & Antrenman Uyumu",
+                                value: availability,
+                                inline: false
+                            },
+                            {
+                                name: "📜 Turnuva & Takım Tecrübesi",
+                                value: experience,
+                                inline: false
+                            },
+                            {
+                                name: "🎯 Takıma Katkısı & Hedefleri",
+                                value: whyBwe,
+                                inline: false
+                            }
+                        ],
+                        footer: {
+                            text: "Black White Esports • BWE Recruitment Portal 2026",
+                            icon_url: "https://media.valorant-api.com/agents/add6443a-41bd-e414-f6c8-48da1f05b4e3/displayicon.png"
+                        },
+                        timestamp: new Date().toISOString()
+                    }
+                ]
+            };
+
+            // Loading state
+            submitBtn.disabled = true;
+            btnText.innerText = "GÖNDERİLİYOR...";
+            btnSpinner.classList.remove("hidden");
+
+            try {
+                const res = await fetch(WEBHOOK_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(embedPayload)
+                });
+
+                if (res.ok) {
+                    localStorage.setItem("bwe_last_sub_time", Date.now().toString());
+
+                    statusAlert.className = "block p-6 rounded-2xl bg-emerald-950/80 border border-emerald-400 text-emerald-200 text-sm shadow-apple-glass";
+                    statusAlert.innerHTML = `
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl">✅</span>
+                            <div>
+                                <h4 class="font-extrabold text-white text-lg font-display">BAŞVURUNUZ BWE YÖNETİMİNE ULAŞTI!</h4>
+                                <p class="text-emerald-300 mt-1">Bilgileriniz ve seçtiğiniz rol Discord sunucumuza başarıyla iletildi. Koçlarımız ve yönetim Discord (${discordUsername}) üzerinden sizinle tryout için iletişime geçecektir.</p>
+                            </div>
+                        </div>
+                    `;
+
+                    document.getElementById("recruitmentForm").reset();
+                } else {
+                    throw new Error("HTTP " + res.status);
+                }
+            } catch (err) {
+                console.error(err);
+                statusAlert.className = "block p-6 rounded-2xl bg-red-950/80 border border-red-500 text-red-200 text-sm shadow-apple-glass";
+                statusAlert.innerHTML = `
+                    <div class="flex items-center gap-4">
+                        <span class="text-3xl">⚠️</span>
+                        <div>
+                            <h4 class="font-extrabold text-white text-lg font-display">GÖNDERİM SIRASINDA BİR HATA OLUŞTU</h4>
+                            <p class="text-red-300 mt-1">Webhook bağlantısı kurulamadı. Lütfen internetinizi kontrol edip tekrar deneyiniz.</p>
+                        </div>
+                    </div>
+                `;
+            } finally {
+                submitBtn.disabled = false;
+                btnText.innerText = "BAŞVURUYU GÖNDER";
+                btnSpinner.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
