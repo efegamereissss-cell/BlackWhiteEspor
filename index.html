@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black White Esports (BWE) | Valorant Kadro Başvurusu</title>
-    <meta name="description" content="Black White Esports (BWE) Valorant takımı resmi oyuncu seçmeleri. Tüm rollerde aktif kadro alımı.">
+    <title>Black White Esports (BWE) | Valorant Premier Kadro Seçmeleri</title>
+    <meta name="description" content="Black White Esports (BWE) Valorant Premier takımı resmi oyuncu seçmeleri. Tüm rollerde aktif Premier kadrosu kuruluyor!">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,9 +104,6 @@
             box-shadow: 0 0 20px rgba(255, 70, 85, 0.4);
             transform: translateY(-2px);
         }
-        .role-radio:checked + label .check-mark {
-            opacity: 1;
-        }
 
         /* Agent Checkbox Active State */
         .agent-checkbox:checked + label {
@@ -121,17 +118,16 @@
 
     <!-- ================= NET VE ŞIK ARKA PLAN GÖRSELİ ================= -->
     <div class="fixed inset-0 pointer-events-none -z-20 overflow-hidden">
-        <!-- Resmi Ascent Premier Stadyum 4K Görseli (Bulanık değil, net ve kaliteli) -->
+        <!-- Resmi Ascent Premier Stadyum 4K Görseli -->
         <img src="https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/premierbackgroundimage.png" 
-             alt="Valorant Esports Arena" 
+             alt="Valorant Premier Arena" 
              class="w-full h-full object-cover filter brightness-[0.45] contrast-110">
-        <!-- Hafif ve dengeli karanlık katman (Yazılar net okunsun ama fotoğraf açıkça görünsün) -->
         <div class="absolute inset-0 bg-gradient-to-b from-[#080A0E]/80 via-[#080A0E]/70 to-[#080A0E]"></div>
     </div>
 
-    <!-- ================= 1. NET DUYURU BANDI ================= -->
+    <!-- ================= 1. PREMIER ODAKLI DUYURU BANDI ================= -->
     <div class="bg-valRed text-white text-xs md:text-sm font-extrabold uppercase py-2 px-4 shadow-lg text-center tracking-wider">
-        🔥 <strong>RESMİ DUYURU:</strong> BLACK WHITE ESPORTS (BWE) <strong>TÜM ROLLERDE</strong> (DÜELLOCU, ÖNCÜ, KONTROL, GÖZCÜ, FLEX) OYUNCU ALIMI YAPIYOR!
+        🔥 <strong>PREMIER DUYURUSU:</strong> BLACK WHITE ESPORTS (BWE) <strong>VALORANT PREMIER</strong> KADROSU İÇİN TÜM ROLLERDE OYUNCU ALIMI YAPIYOR!
     </div>
 
     <!-- ================= 2. NAVBAR ================= -->
@@ -146,12 +142,13 @@
                     <div class="font-display font-extrabold text-lg tracking-wider text-white">
                         BLACK WHITE <span class="text-xs text-valRed font-sans font-bold">ESPORTS</span>
                     </div>
-                    <div class="text-[10px] tracking-widest text-zinc-400 font-semibold uppercase">Valorant Division</div>
+                    <div class="text-[10px] tracking-widest text-zinc-400 font-semibold uppercase">Valorant Premier Division</div>
                 </div>
             </a>
 
             <!-- Nav Links -->
             <div class="hidden md:flex items-center gap-8 text-sm font-bold text-zinc-300">
+                <a href="#premier" class="hover:text-white transition-colors">Premier Hedefimiz</a>
                 <a href="#roles" class="hover:text-white transition-colors">Açık Roller</a>
                 <a href="#maps" class="hover:text-white transition-colors">Haritalarımız</a>
                 <a href="#apply" class="hover:text-white transition-colors">Kadro Başvurusu</a>
@@ -159,12 +156,12 @@
 
             <!-- CTA -->
             <a href="#apply" class="px-5 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-black font-extrabold text-xs md:text-sm transition-all transform hover:scale-105">
-                Başvuru Yap
+                Premier'a Başvur
             </a>
         </nav>
     </div>
 
-    <!-- ================= 3. HERO BÖLÜMÜ (NET FOTOĞRAFLI & SADE ŞIK) ================= -->
+    <!-- ================= 3. HERO: VALORANT PREMIER KADROSU ================= -->
     <section class="pt-12 pb-16 px-4 max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
@@ -172,61 +169,59 @@
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-valRed/20 border border-valRed/40 text-xs font-bold text-valRed">
                     <span class="w-2 h-2 rounded-full bg-valRed animate-ping"></span>
-                    <span>2026 RESMİ KADRO SEÇMELERİ</span>
+                    <span>VALORANT PREMIER KADROSU SEÇMELERİ</span>
                 </div>
 
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display text-white tracking-tight leading-tight">
-                    Zirveye Oyna.<br>
-                    <span class="text-valRed">BWE Formasını Giy.</span>
+                    Premier'da Zirveye.<br>
+                    <span class="text-valRed">BWE Takımına Katıl.</span>
                 </h1>
 
                 <p class="text-base text-zinc-300 max-w-xl leading-relaxed">
-                    Black White Esports olarak VCT Challengers hedefiyle mücadele edecek yeni Valorant kadromuzu kuruyoruz. 
-                    Mekaniklerine, oyun zekana ve takım iletişimine güveniyorsan aramıza katıl!
+                    Black White Esports olarak şu anda tüm odağımızı <strong>Valorant Premier Moduna</strong> veriyoruz. 
+                    Haftalık Premier maçlarında ve sezon sonu Playoff karşılaşmalarında şampiyonluk için mücadele edecek sağlam, disiplinli 5'limizi kuruyoruz.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
                     <a href="#apply" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-valRed hover:bg-valRedHover text-white font-extrabold text-sm transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
-                        <span>BAŞVURU FORMUNA GİT</span>
+                        <span>PREMIER KADROSUNA BAŞVUR</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
                     </a>
                     <a href="#roles" class="w-full sm:w-auto px-7 py-3.5 rounded-xl apple-glass hover:bg-white/10 text-white font-bold text-sm transition-all border border-white/20">
-                        Açık Rolleri İncele
+                        Açık Rolleri Gör
                     </a>
                 </div>
 
-                <!-- Önemli Detaylar -->
+                <!-- Premier Odak Göstergeleri -->
                 <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-md mx-auto lg:mx-0">
                     <div>
-                        <div class="text-2xl font-black text-white font-display">Tüm Roller</div>
-                        <div class="text-xs text-zinc-400 font-medium">Alım Aktif</div>
+                        <div class="text-2xl font-black text-white font-display">Premier</div>
+                        <div class="text-xs text-zinc-400 font-medium">Ana Odak</div>
                     </div>
                     <div>
-                        <div class="text-2xl font-black text-valRed font-display">Immortal+</div>
-                        <div class="text-xs text-zinc-400 font-medium">Taban Beklenti</div>
+                        <div class="text-2xl font-black text-valRed font-display">Playoff</div>
+                        <div class="text-xs text-zinc-400 font-medium">Şampiyonluk Hedefi</div>
                     </div>
                     <div>
-                        <div class="text-2xl font-black text-white font-display">Koç & VOD</div>
-                        <div class="text-xs text-zinc-400 font-medium">Düzenli Analiz</div>
+                        <div class="text-2xl font-black text-white font-display">Haftalık</div>
+                        <div class="text-xs text-zinc-400 font-medium">Düzenli Maçlar</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Sağ: Net ve Yüksek Kaliteli Ajan Görseli (Jett & Sova) -->
+            <!-- Sağ: Net Ajan Görseli (Jett & Sova) -->
             <div class="lg:col-span-5 flex justify-center">
                 <div class="relative w-full max-w-md apple-card rounded-3xl p-5 border border-white/15 overflow-hidden">
                     <div class="flex items-center justify-between pb-3 border-b border-white/10 mb-3">
-                        <span class="text-xs font-mono font-bold text-white">BWE // TEAM SHOWCASE</span>
+                        <span class="text-xs font-mono font-bold text-white">BWE // PREMIER ROSTER</span>
                         <span class="text-[11px] font-bold text-valRed uppercase">Aktif Seçmeler</span>
                     </div>
 
                     <!-- Net Ajan Fotoğrafları -->
                     <div class="relative h-80 rounded-2xl overflow-hidden bg-gradient-to-b from-[#181C28] to-[#0D1017] flex items-center justify-center">
-                        <!-- Sova (Öncü) Resmi Render -->
                         <img src="https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/fullportrait.png" 
                              alt="Sova - Initiator" 
                              class="absolute left-[-15px] bottom-[-10px] w-64 h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
-                        <!-- Jett (Düellocu) Resmi Render -->
                         <img src="https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/fullportrait.png" 
                              alt="Jett - Duelist" 
                              class="absolute right-[-15px] bottom-[-20px] w-64 h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
@@ -238,7 +233,7 @@
                     </div>
 
                     <div class="mt-3 text-center text-xs text-zinc-300 font-medium">
-                        Her pozisyon için disiplinli ve hedefi olan oyuncular seçilecektir.
+                        Premier haftalık maç saatlerine düzenli katılabilecek takım arkadaşları arıyoruz.
                     </div>
                 </div>
             </div>
@@ -246,10 +241,10 @@
         </div>
     </section>
 
-    <!-- ================= 4. AÇIK ROLLER VE NET AJAN FOTOĞRAFLARI ================= -->
+    <!-- ================= 4. PREMIER ROLLER VE NET FOTOĞRAFLAR ================= -->
     <section id="roles" class="py-14 px-4 max-w-6xl mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-xs uppercase font-extrabold text-valRed tracking-widest mb-2">ARANAN POZİSYONLAR</h2>
+            <h2 class="text-xs uppercase font-extrabold text-valRed tracking-widest mb-2">PREMIER ROLLERİ</h2>
             <p class="text-3xl sm:text-4xl font-extrabold text-white font-display">Tüm Rollerde Kadro Açık</p>
         </div>
 
@@ -262,7 +257,6 @@
                         <span class="text-xs font-black uppercase text-valRed">Düellocu</span>
                         <span class="text-[11px] font-mono text-zinc-400">ENTRY</span>
                     </div>
-                    <!-- Net Jett Görseli -->
                     <div class="h-52 w-full rounded-xl bg-[#151924] flex items-center justify-center overflow-hidden mb-4 border border-white/5">
                         <img src="https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/fullportrait.png" 
                              alt="Düellocu Jett" 
@@ -270,11 +264,11 @@
                     </div>
                     <h3 class="text-lg font-bold text-white font-display">Düellocu (Duelist)</h3>
                     <p class="text-xs text-zinc-300 mt-1.5 leading-relaxed">
-                        Jett, Reyna, Raze veya Yoru ile ilk kanı alan, agresif space açabilen mekanik yetenekler.
+                        Jett, Reyna, Raze ile Premier maçlarında ilk kanı alan ve agresif alan açan oyuncular.
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-white/10 flex justify-between text-xs font-bold text-zinc-400">
-                    <span>Öncelik: İlk Kan & Giriş</span>
+                    <span>İlk Kan & Agresiflik</span>
                     <span class="text-valRed">Açık</span>
                 </div>
             </div>
@@ -286,7 +280,6 @@
                         <span class="text-xs font-black uppercase text-valRed">Öncü</span>
                         <span class="text-[11px] font-mono text-zinc-400">RECON</span>
                     </div>
-                    <!-- Net Sova Görseli -->
                     <div class="h-52 w-full rounded-xl bg-[#151924] flex items-center justify-center overflow-hidden mb-4 border border-white/5">
                         <img src="https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/fullportrait.png" 
                              alt="Öncü Sova" 
@@ -294,12 +287,12 @@
                     </div>
                     <h3 class="text-lg font-bold text-white font-display">Öncü (Initiator)</h3>
                     <p class="text-xs text-zinc-300 mt-1.5 leading-relaxed">
-                        Sova, Fade, Breach, Gekko ve Skye ile info toplayan ve flash/lineup zamanlamasına hakim oyuncular.
+                        Sova, Fade, Breach, Gekko ile info toplayıp Premier rauntlarında takımı rahatlatan oyuncular.
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-white/10 flex justify-between text-xs font-bold text-zinc-400">
-                    <span>Öncelik: Lineup & İletişim</span>
-                    <span class="text-valRed font-bold">Yüksek</span>
+                    <span>Lineup & Flash</span>
+                    <span class="text-valRed font-bold">Öncelikli</span>
                 </div>
             </div>
 
@@ -310,7 +303,6 @@
                         <span class="text-xs font-black uppercase text-valRed">Kontrol</span>
                         <span class="text-[11px] font-mono text-zinc-400">SMOKE</span>
                     </div>
-                    <!-- Net Omen Görseli -->
                     <div class="h-52 w-full rounded-xl bg-[#151924] flex items-center justify-center overflow-hidden mb-4 border border-white/5">
                         <img src="https://media.valorant-api.com/agents/8e253930-4c05-31dd-1b6c-968525494517/fullportrait.png" 
                              alt="Kontrol Omen" 
@@ -318,11 +310,11 @@
                     </div>
                     <h3 class="text-lg font-bold text-white font-display">Kontrol Uzmanı</h3>
                     <p class="text-xs text-zinc-300 mt-1.5 leading-relaxed">
-                        Omen, Viper, Astra ve Brimstone ile görüş engelleyen ve makro harita kontrolü sağlayan taktikçiler.
+                        Omen, Viper, Astra ile görüş kapatan ve Premier haritalarında tempo kuran taktikçiler.
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-white/10 flex justify-between text-xs font-bold text-zinc-400">
-                    <span>Öncelik: Görüş Engelleme</span>
+                    <span>Harita Hakimiyeti</span>
                     <span class="text-valRed">Açık</span>
                 </div>
             </div>
@@ -334,7 +326,6 @@
                         <span class="text-xs font-black uppercase text-valRed">Gözcü</span>
                         <span class="text-[11px] font-mono text-zinc-400">ANCHOR</span>
                     </div>
-                    <!-- Net Killjoy Görseli -->
                     <div class="h-52 w-full rounded-xl bg-[#151924] flex items-center justify-center overflow-hidden mb-4 border border-white/5">
                         <img src="https://media.valorant-api.com/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/fullportrait.png" 
                              alt="Gözcü Killjoy" 
@@ -342,11 +333,11 @@
                     </div>
                     <h3 class="text-lg font-bold text-white font-display">Gözcü (Sentinel)</h3>
                     <p class="text-xs text-zinc-300 mt-1.5 leading-relaxed">
-                        Killjoy ve Cypher ile site tutan, arkasını kollayan ve flankleri kilitleyen savunma ustaları.
+                        Killjoy ve Cypher ile site tutan, arkasını kollayan ve savunmayı kitleyen güvenilir oyuncular.
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-white/10 flex justify-between text-xs font-bold text-zinc-400">
-                    <span>Öncelik: Site Savunması</span>
+                    <span>Site Savunması</span>
                     <span class="text-valRed">Açık</span>
                 </div>
             </div>
@@ -354,16 +345,15 @@
         </div>
     </section>
 
-    <!-- ================= 5. NET VE 4K HARİTA GALERİSİ ================= -->
+    <!-- ================= 5. PREMIER HARİTA HAVUZU ================= -->
     <section id="maps" class="py-14 px-4 max-w-6xl mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-xs uppercase font-extrabold text-valRed tracking-widest mb-2">BWE HARİTA STRATEJİLERİ</h2>
-            <p class="text-3xl sm:text-4xl font-extrabold text-white font-display">Ana Turnuva Haritalarımız</p>
+            <h2 class="text-xs uppercase font-extrabold text-valRed tracking-widest mb-2">PREMIER HAVUZU</h2>
+            <p class="text-3xl sm:text-4xl font-extrabold text-white font-display">Haftalık Premier Haritalarımız</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             
-            <!-- Map 1: Ascent -->
             <div class="apple-card rounded-2xl overflow-hidden group">
                 <div class="h-44 w-full overflow-hidden">
                     <img src="https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/splash.png" 
@@ -372,11 +362,10 @@
                 </div>
                 <div class="p-4">
                     <h4 class="font-extrabold text-white font-display text-base">Ascent</h4>
-                    <p class="text-xs text-zinc-300 mt-1">Mid kontrolü ve Sova oklarıyla ana haritamız.</p>
+                    <p class="text-xs text-zinc-300 mt-1">Mid kontrolü ve Sova oklarıyla ana Premier haritamız.</p>
                 </div>
             </div>
 
-            <!-- Map 2: Bind -->
             <div class="apple-card rounded-2xl overflow-hidden group">
                 <div class="h-44 w-full overflow-hidden">
                     <img src="https://media.valorant-api.com/maps/2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba/splash.png" 
@@ -389,7 +378,6 @@
                 </div>
             </div>
 
-            <!-- Map 3: Haven -->
             <div class="apple-card rounded-2xl overflow-hidden group">
                 <div class="h-44 w-full overflow-hidden">
                     <img src="https://media.valorant-api.com/maps/2bee0dc9-4ffe-519b-1cbd-7fbe763a6047/splash.png" 
@@ -398,11 +386,10 @@
                 </div>
                 <div class="p-4">
                     <h4 class="font-extrabold text-white font-display text-base">Haven</h4>
-                    <p class="text-xs text-zinc-300 mt-1">3 bombalama alanında hızlı retake stratejileri.</p>
+                    <p class="text-xs text-zinc-300 mt-1">3 alanda hızlı retake ve koordineli savunma.</p>
                 </div>
             </div>
 
-            <!-- Map 4: Abyss -->
             <div class="apple-card rounded-2xl overflow-hidden group">
                 <div class="h-44 w-full overflow-hidden">
                     <img src="https://media.valorant-api.com/maps/224b0a95-48b9-f703-1bd8-67aca101a61f/splash.png" 
@@ -411,21 +398,21 @@
                 </div>
                 <div class="p-4">
                     <h4 class="font-extrabold text-white font-display text-base">Abyss</h4>
-                    <p class="text-xs text-zinc-300 mt-1">Dikey oyun ve agresif Omen/Jett pozisyonları.</p>
+                    <p class="text-xs text-zinc-300 mt-1">Dikey oyun ve agresif Jett/Omen hamleleri.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- ================= 6. BAŞVURU FORMU (NET, KULLANIŞLI & KONTRASTLI) ================= -->
+    <!-- ================= 6. PREMIER BAŞVURU FORMU ================= -->
     <section id="apply" class="py-16 px-4 max-w-4xl mx-auto">
         <div class="apple-glass rounded-3xl p-6 sm:p-10 border border-white/20 shadow-2xl">
             
             <!-- Başlık -->
             <div class="border-b border-white/15 pb-6 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-display">Kadro Başvuru Formu</h2>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-display">BWE Premier Başvuru Formu</h2>
                     <p class="text-xs sm:text-sm text-zinc-300 mt-1">Bilgilerini eksiksiz doldur, doğrudan Discord yönetim kanalına düşsün.</p>
                 </div>
                 <div class="flex items-center gap-2 bg-emerald-950/70 border border-emerald-500/50 px-3.5 py-1.5 rounded-xl text-xs font-mono text-emerald-300 font-bold self-start sm:self-auto">
@@ -498,7 +485,7 @@
 
                 <!-- 3. Başvurulan Rol -->
                 <div class="pt-4 border-t border-white/10">
-                    <h3 class="text-xs font-extrabold uppercase text-valRed tracking-wider mb-3">3. BAŞVURULAN ANA ROL *</h3>
+                    <h3 class="text-xs font-extrabold uppercase text-valRed tracking-wider mb-3">3. PREMIER'DA OYNAMAK İSTEDİĞİNİZ ANA ROL *</h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         <div>
                             <input type="radio" id="r_init" name="primaryRole" value="Öncü (Initiator)" class="hidden role-radio" required>
@@ -576,21 +563,21 @@
                         </div>
                     </div>
                     <div class="mt-3">
-                        <label class="block text-xs font-bold text-zinc-200 mb-1" for="otherAgents">Diğer Havuzunuz (Jett, Omen vb.)</label>
+                        <label class="block text-xs font-bold text-zinc-200 mb-1" for="otherAgents">Diğer Ajan Havuzunuz (Jett, Omen, Killjoy vb.)</label>
                         <input type="text" id="otherAgents" placeholder="örn. Jett, Omen, Viper, Killjoy" class="w-full px-4 py-2.5 rounded-xl clean-input text-xs">
                     </div>
                 </div>
 
-                <!-- 5. Deneyim & Scrim -->
+                <!-- 5. Premier Uygunluğu -->
                 <div class="pt-4 border-t border-white/10 space-y-3">
-                    <h3 class="text-xs font-extrabold uppercase text-valRed tracking-wider">5. SCRIM UYGUNLUĞU VE DENEYİM</h3>
+                    <h3 class="text-xs font-extrabold uppercase text-valRed tracking-wider">5. PREMIER MAÇ SAATLERİ VE TECRÜBE</h3>
                     <div>
-                        <label class="block text-xs font-bold text-zinc-200 mb-1" for="scrimHours">Scrim / Antrenman Saatleriniz *</label>
-                        <input type="text" id="scrimHours" required placeholder="örn. Hafta içi 19:30 - 24:00 arası müsaitim." class="w-full px-4 py-3 rounded-xl clean-input">
+                        <label class="block text-xs font-bold text-zinc-200 mb-1" for="scrimHours">Premier Maç Günleri & Saatlerine Uygunluğunuz *</label>
+                        <input type="text" id="scrimHours" required placeholder="örn. Haftalık Premier maç günlerinde (akşam 20:00 - 23:00) eksiksiz katılırım." class="w-full px-4 py-3 rounded-xl clean-input">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-zinc-200 mb-1" for="experience">Önceki Takımlarınız & Turnuva Tecrübeniz *</label>
-                        <textarea id="experience" rows="3" required placeholder="Daha önce yer aldığınız takımlar, turnuva maçları..." class="w-full px-4 py-3 rounded-xl clean-input resize-none"></textarea>
+                        <label class="block text-xs font-bold text-zinc-200 mb-1" for="experience">Önceki Takım & Premier Tecrübeniz *</label>
+                        <textarea id="experience" rows="3" required placeholder="Daha önce oynadığınız Premier sezonları, turnuvalar ve tecrübeleriniz..." class="w-full px-4 py-3 rounded-xl clean-input resize-none"></textarea>
                     </div>
                 </div>
 
@@ -601,7 +588,7 @@
                 <div class="flex justify-end pt-3">
                     <button type="submit" id="submitBtn" 
                             class="w-full sm:w-auto px-10 py-3.5 rounded-xl bg-valRed hover:bg-valRedHover text-white font-extrabold text-sm tracking-wide shadow-lg transition-transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
-                        <span id="btnText">BAŞVURUYU GÖNDER</span>
+                        <span id="btnText">PREMIER BAŞVURUSUNU GÖNDER</span>
                         <svg id="btnSpinner" class="hidden animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
@@ -618,7 +605,7 @@
     <footer class="border-t border-white/10 py-8 px-4 text-center text-xs text-zinc-400">
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="font-bold text-white">© 2026 Black White Esports (BWE).</div>
-            <div>Valorant Roster Recruitment • VCT Tryouts</div>
+            <div>Valorant Premier Roster • Playoff Tryouts</div>
         </div>
     </footer>
 
@@ -682,26 +669,26 @@
             const experience = sanitizeText(document.getElementById("experience").value);
 
             const embedPayload = {
-                username: "BWE Espor Başvuru Sistemi",
+                username: "BWE Premier Başvuru Botu",
                 avatar_url: "https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
                 embeds: [
                     {
-                        title: `⚔️ YENİ OYUNCU BAŞVURUSU: [${primaryRole}]`,
-                        description: `**${fullName}** kadroya katılmak için başvurdu.`,
+                        title: `🏆 YENİ PREMIER KADRO BAŞVURUSU: [${primaryRole}]`,
+                        description: `**${fullName}** Valorant Premier kadromuza katılmak için başvurdu.`,
                         color: 16729685, // Valorant Red #FF4655
                         fields: [
                             { name: "👤 Aday", value: `**Ad:** ${fullName}\n**Yaş:** ${age}\n**Şehir:** ${city}`, inline: true },
                             { name: "💬 Discord", value: `\`${discordUsername}\``, inline: true },
-                            { name: "🎯 Rol", value: `**${primaryRole}**`, inline: true },
+                            { name: "🎯 Premier Rolü", value: `**${primaryRole}**`, inline: true },
                             { name: "🎮 Riot ID", value: `\`${riotId}\``, inline: true },
                             { name: "🏆 Rank", value: `**Mevcut:** ${currentRank}\n**Peak:** ${peakRank}`, inline: true },
                             { name: "🔗 Tracker", value: trackerLink.startsWith("http") ? `[Profile Git](${trackerLink})` : "Yok", inline: true },
                             { name: "🦅 Seçilen Ajanlar", value: agentsText, inline: false },
                             { name: "⚡ Diğer Ajanlar", value: otherAgents, inline: false },
-                            { name: "⏰ Scrim Saatleri", value: scrimHours, inline: false },
-                            { name: "📜 Deneyim", value: experience, inline: false }
+                            { name: "⏰ Premier Maç Uygunluğu", value: scrimHours, inline: false },
+                            { name: "📜 Deneyim & Premier Geçmişi", value: experience, inline: false }
                         ],
-                        footer: { text: "Black White Esports • BWE 2026", icon_url: "https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png" },
+                        footer: { text: "Black White Esports • BWE Premier Roster 2026", icon_url: "https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png" },
                         timestamp: new Date().toISOString()
                     }
                 ]
@@ -721,7 +708,7 @@
                 if (res.ok) {
                     localStorage.setItem("bwe_last_sub_clean", Date.now().toString());
                     statusAlert.className = "block p-5 rounded-2xl bg-emerald-950 border border-emerald-400 text-emerald-200 text-sm";
-                    statusAlert.innerHTML = `✅ <strong>Başvurunuz Alındı!</strong> Bilgileriniz BWE Discord sunucusuna iletildi. Uygun görüldüğü takdirde (${discordUsername}) üzerinden iletişime geçilecektir.`;
+                    statusAlert.innerHTML = `✅ <strong>Premier Başvurunuz Alındı!</strong> Bilgileriniz BWE Discord sunucusuna iletildi. Premier kadrosu için (${discordUsername}) üzerinden iletişime geçilecektir.`;
                     document.getElementById("recruitmentForm").reset();
                 } else {
                     throw new Error("Discord API hata kodu: " + res.status);
@@ -731,7 +718,7 @@
                 statusAlert.innerHTML = `⚠️ <strong>Gönderim Hatası:</strong> Lütfen internet bağlantınızı kontrol ediniz.`;
             } finally {
                 submitBtn.disabled = false;
-                btnText.innerText = "BAŞVURUYU GÖNDER";
+                btnText.innerText = "PREMIER BAŞVURUSUNU GÖNDER";
                 btnSpinner.classList.add("hidden");
             }
         }
